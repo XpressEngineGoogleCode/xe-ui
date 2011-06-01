@@ -1,12 +1,10 @@
 @charset "utf-8";
 /* NHN (developers@xpressengine.com) */
-
 /* Element Reset */
 body,table,input,textarea,select,button{font-family:Tahoma,Geneva,sans-serif;font-size:14px;color:#333}
 header,footer,section,article,aside,nav,hgroup,details,menu,figure,figcaption{display:block}
 button,input[type=submit],input[type=reset],input[type=button]{cursor:pointer;overflow:visible}
 img{border:0}
-
 /* XEUI Content */
 .codeBlock{font-family:"Lucida Console", Monaco, monospace;background:#333;color:#fff;padding:1em;overflow:auto}
 .codeBlock em{font-style:normal;color:#f60}
@@ -17,14 +15,12 @@ img{border:0}
 .itemToggle:active,
 .itemToggle:focus{opacity:.25}
 .work .container,.work .codeBlock{display:block !important}
-
 /* Section & Heading */
 .section{margin:1em 0}
 .h1{border-bottom:4px solid #ccc;font-size:24px;zoom:1}
 .h2{border-bottom:3px solid #ccc;font-size:20px;zoom:1}
 .h3{border-bottom:2px solid #ccc;font-size:16px;zoom:1}
 .h4{border-bottom:1px solid #ccc;font-size:12px;zoom:1}
-
 /* Portlet */
 .portlet{position:relative;border:1px solid #e9e9e9;margin:1em 0;background:#fff;zoom:1}
 .portlet h2, .portlet h3{margin:0;padding:.5em 1em;font-size:14px;border:1px solid #fff;border-bottom:1px solid #e9e9e9;background:#f7f7f7}
@@ -37,7 +33,6 @@ img{border:0}
 .portlet .lined .time{top:.5em}
 .portlet .more{position:absolute;top:.5em;right:1em;text-decoration:none !important}
 .portlet .more span{color:#999}
-
 /* Table */
 .table{margin:1em 0}
 .table table{width:100%;border:0;border-collapse:collapse;border-top:2px solid #666}
@@ -47,7 +42,6 @@ img{border:0}
 .table th{background:#f8f8f8}
 .table thead th{border-bottom:1px solid #999}
 .table tfoot td{font-weight:bold;background:#f8f8f8}
-
 /* Form */
 .form{margin:1em 0;padding:0}
 .form fieldset{margin:0 0 2em 0;padding:0;border:0}
@@ -66,7 +60,31 @@ img{border:0}
 .form p.desc{margin:.25em 0;line-height:1.4}
 .form .question{font-weight:bold;margin:0 0 5px 0}
 .form .answer{margin:0}
-
+/* Global Navigation Bar */
+.gnb{border:1px solid #c1c1c1;border-left:0;border-right:0;background:#efefef -webkit-gradient(linear, 0% 0%, 0% 100%, from(#efefef), to(#dcdcdc));background:#efefef -moz-linear-gradient(top, #efefef, #dcdcdc);filter:progid:DXImageTransform.Microsoft.gradient(startColorStr=#efefef, endColorStr=#dcdcdc)}
+.gnb ul{margin:0;padding:0 0 0 15px;list-style:none;border:1px solid #fff;border-left:0;border-right:0}
+.gnb ul ul{position:absolute;top:33px;left:0;border:1px solid #ccc;padding:0;background:#fff}
+.gnb ul:after{content:"";display:block;clear:both}
+.gnb li{position:relative;float:left;border:1px solid #fff;border-top:0;border-bottom:0;margin:0 -1px 0 0}
+.gnb li li{float:none;border:0;border-top:1px dotted #ccc;margin:0;padding:2px}
+.gnb li li:first-child{border:0}
+.gnb li a{display:block;font-weight:bold;color:#333;font-size:13px;padding:8px 18px;white-space:nowrap;text-decoration:none;text-shadow:0 1px 0 #fff;filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0, OffY=1, Color=#ffffff, Positive=true);zoom:1}
+.gnb li a:hover,
+.gnb li a:active,
+.gnb li a:focus,
+.gnb li.active a{background:#fff;border:1px solid #ddd;padding:7px 17px}
+.gnb li li a{color:#666;padding:5px 10px !important;font-weight:normal !important;border:0 !important}
+.gnb li li a:hover,
+.gnb li li a:active,
+.gnb li li a:focus,
+.gnb li li.active a{border:0;padding:5px 10px;background:#eee;font-weight:bold !important;letter-spacing:-1px}
+.gnb.jx ul{display:block !important;position:static;padding:0}
+.gnb.jx li{float:none;border-top:1px solid #ccc}
+.gnb.jx ul ul{border:0}
+.gnb.jx li li{border:0}
+.gnb.jx li a:hover,
+.gnb.jx li a:active,
+.gnb.jx li a:focus{background:none !important}
 /* Lined Tab Navigation */
 .tab.line{padding:0 0 35px 0;margin:1em 0}
 .tab.line ul{position:relative;margin:0;padding:0;list-style:none;border-bottom:1px solid #ccc;zoom:1}
@@ -94,7 +112,6 @@ img{border:0}
 .tab.line.jx li li a:hover,
 .tab.line.jx li li a:active,
 .tab.line.jx li li a:focus{text-decoration:underline}
-
 /* Faced Tab Navigation */
 .tab.face{padding:0 0 35px 0;margin:1em 0}
 .tab.face ul{position:relative;margin:0;padding:0;_padding:2px 0 0 0;list-style:none;border-bottom:2px solid #315593;zoom:1}
@@ -124,7 +141,6 @@ img{border:0}
 .tab.face.jx li li a:hover,
 .tab.face.jx li li a:active,
 .tab.face.jx li li a:focus{text-decoration:underline}
-
 /* Tab + List */
 .tab.list{height:160px;margin:1em 0}
 .tab.list ul{position:relative;margin:0;padding:0;list-style:none;border-bottom:1px solid #ccc;zoom:1}
@@ -151,13 +167,12 @@ img{border:0}
 .tab.list.jx li ul{position:static;display:block;left:0;top:0;padding:5px 0}
 .tab.list.jx li li a{display:inline;border:0 !important;background:none !important;font-weight:normal}
 .tab.list.jx li li.more{top:7px;right:15px}
-
 /* Vertical Navigation */
 .vNav{position:relative;margin:1em 0;line-height:normal;zoom:1}
 .vNav ul{margin:0;padding:0;list-style:none}
 .vNav li{position:relative;margin:0 0 -1px 0;vertical-align:top;zoom:1}
 .vNav li a{display:block;position:relative;padding:8px 10px;text-decoration:none;color:#666;font-weight:bold;background:#fafafa;border:1px solid #eee;zoom:1}
-.vNav li a .i{position:absolute;top:50%;left:100%;margin:-4px 0 0 -16px;width:8px;height:8px;color:#ccc;background:url(img/iconSub.gif) no-repeat left top}
+.vNav li a .i{position:absolute;top:50%;left:100%;margin:-4px 0 0 -16px;width:8px;height:8px;color:#ccc;background:url(img/iconNavVr.gif) no-repeat left top}
 .vNav li ul{padding:5px 0;background:#fff}
 .vNav li li{margin:0}
 .vNav li li a{font-weight:normal;background:#fff;padding:5px 10px;border:0}
@@ -169,7 +184,6 @@ img{border:0}
 .vNav li.active li a{border:0}
 .vNav li.active ul{display:block;border-top:1px solid #eee}
 .vNav li.active li.active a span{color:#13b200;font-weight:bold;letter-spacing:-1px}
-
 /* Tree Navigation */
 .tNav{position:relative;margin:1em 0;zoom:1}
 .tNav ul{list-style:none;margin:0;padding:0}
@@ -185,7 +199,6 @@ img{border:0}
 .tNav .tNavToggle{position:absolute;top:0;left:0;width:19px;height:19px;padding:0;overflow:hidden;border:0;font-size:0;color:#fff;vertical-align:middle;text-indent:19px;*text-indent:0;background:transparent url(img/btnPlusMinus.gif) no-repeat;cursor:pointer}
 .tNav .tNavToggle.plus{background-position:5px -15px}
 .tNav .tNavToggle.minus{background-position:5px 5px}
-
 /* Pagination */
 .pagination{padding:15px 0;text-align:center;line-height:normal}
 .pagination a,
@@ -199,7 +212,6 @@ img{border:0}
 .pagination .direction:hover,
 .pagination .direction:active,
 .pagination .direction:focus{border:0;margin:0}
-
 /* Button */
 .btn{position:relative;display:inline-block;margin:2px;vertical-align:top}
 .btn *{display:inline-block;height:22px;line-height:22px;margin:0;font-weight:bold;font-size:14px;color:#fff;text-decoration:none;border:1px solid;cursor:pointer;overflow:visible;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;box-shadow:inset 0 0 1px #fff;-moz-box-shadow:inset 0 0 1px #fff;-webkit-box-shadow:inset 0 0 1px #fff;background-color:#666;text-shadow:0 -1px 0 #333;zoom:1}
@@ -212,7 +224,6 @@ img{border:0}
 .btn.medium a{height:28px}
 .btn.large *{padding:0 18px;font-size:24px;height:36px;line-height:34px}
 .btn.large a{height:34px}
-
 /* FAQ */
 .faq{border-bottom:1px solid #ddd;margin:1em 0}
 .faq .faqHeader{position:relative;zoom:1}
@@ -223,14 +234,12 @@ img{border:0}
 .faq .q a{display:block;padding:.5em 1em;text-align:left;font-weight:bold;background:#fafafa;color:#000;text-decoration:none !important}
 .faq .q a:hover, .faq .q a:active, .faq .q a:focus{background:#f8f8f8}
 .faq .a{margin:0;padding:1em;line-height:1.5}
-
 /* Horizontal Bar Graph */
 .hGraph ul{margin:1em 50px 1em 50px;padding:1px 0 0 0;border:1px solid #ddd;border-top:0;border-right:0;list-style:none}
 .hGraph li{position:relative;margin:10px 0;white-space:nowrap;vertical-align:top}
 .hGraph .gTerm{position:absolute;width:40px;top:0;left:-50px;line-height:20px;text-align:right;font-weight:bold}
 .hGraph .gBar{position:relative;display:inline-block;height:20px;border:1px solid #ccc;border-left:0;background:#e9e9e9}
 .hGraph .gBar span{position:absolute;width:40px;line-height:20px;top:0;right:-50px}
-
 /* Vertical Bar Graph */
 .vGraph{margin:1em 0;padding:20px 0}
 .vGraph ul{margin:0;padding:0;height:200px;border:1px solid #ddd;border-top:0;border-right:0;list-style:none}
@@ -239,12 +248,10 @@ img{border:0}
 .vGraph .gTerm{position:relative;display:inline-block;width:100%;height:20px;line-height:20px;margin:0 -100% -20px 0;padding:200px 0 0 0;vertical-align:bottom;font-weight:bold}
 .vGraph .gBar{position:relative;display:inline-block;width:100%;margin:-1px 0 0 0;border:1px solid #ccc;border-bottom:0;background:#e9e9e9;vertical-align:bottom}
 .vGraph .gBar span{position:absolute;width:100%;top:-20px;left:0}
-
 /* Star Rating */
 .starRating, .starRating span{display:inline-block;height:14px;height:14px;background:transparent url(img/iconStarRating.gif) no-repeat;overflow:hidden}
 .starRating{width:79px;vertical-align:top}
 .starRating span{font-size:0;line-height:0;vertical-align:top;text-indent:-100px;*text-indent:0;background-position:0 -14px}
-
 /* Progress */
 .prgrs{white-space:nowrap;line-height:normal;vertical-align:middle}
 .prgrs *{vertical-align:middle}
@@ -263,7 +270,6 @@ img{border:0}
 .prgrs.prgrsLarge .pBar,
 .prgrs.prgrsLarge .pAction,
 .prgrs.prgrsLarge .pNum{height:34px;line-height:34px;font-size:14px}
-
 /* Modal Window */
 .modal .bg{position:absolute;background:#000;_background:none;width:100%;height:100%;opacity:.5;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);zoom:1}
 .modal .fg{position:relative;width:50%;margin:5em auto;background:#fff;padding:0 1em;*padding:1em;border:10px solid #ddd;z-index:2;zoom:1}

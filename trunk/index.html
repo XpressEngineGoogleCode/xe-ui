@@ -255,6 +255,126 @@ img{border:0}
 			<article class="item" id="navigation">
 				<h2>Navigation</h2>
 				<div class="container">
+					<h3>Global Navigation Bar</h3>
+					<div class="gnb">
+						<ul>
+							<li><a href="#"><span>Menu 1</span></a>
+								<ul>
+									<li><a href="#">Menu 1-1</a></li>
+									<li><a href="#">Menu 1-2</a></li>
+									<li><a href="#">Menu 1-3</a></li>
+								</ul>
+							</li>
+							<li><a href="#"><span>Menu 2</span></a>
+								<ul>
+									<li><a href="#">Menu 2-1</a></li>
+									<li><a href="#">Menu 2-2</a></li>
+									<li><a href="#">Menu 2-3</a></li>
+								</ul>
+							</li>
+							<li><a href="#"><span>메뉴 3</span></a>
+								<ul>
+									<li><a href="#">메뉴 3-1</a></li>
+									<li><a href="#">메뉴 3-2</a></li>
+									<li><a href="#">메뉴 3-3</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<h3>XHTML</h3>
+<pre class="codeBlock">
+&lt;div class=&quot;<em>gnb jx</em>&quot;&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;Menu 1&lt;/span&gt;&lt;/a&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu 1-1&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu 1-2&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu 1-3&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;Menu 2&lt;/span&gt;&lt;/a&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu 2-1&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu 2-2&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu 2-3&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;메뉴 3&lt;/span&gt;&lt;/a&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;메뉴 3-1&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;메뉴 3-2&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;메뉴 3-3&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+					<h3>CSS</h3>
+<pre class="codeBlock">
+/* Global Navigation Bar */
+.gnb{border:1px solid #c1c1c1;border-left:0;border-right:0;background:#efefef -webkit-gradient(linear, 0% 0%, 0% 100%, from(#efefef), to(#dcdcdc));background:#efefef -moz-linear-gradient(top, #efefef, #dcdcdc);filter:progid:DXImageTransform.Microsoft.gradient(startColorStr=#efefef, endColorStr=#dcdcdc)}
+.gnb ul{margin:0;padding:0 0 0 15px;list-style:none;border:1px solid #fff;border-left:0;border-right:0}
+.gnb ul ul{position:absolute;top:33px;left:0;border:1px solid #ccc;padding:0;background:#fff}
+.gnb ul:after{content:"";display:block;clear:both}
+.gnb li{position:relative;float:left;border:1px solid #fff;border-top:0;border-bottom:0;margin:0 -1px 0 0}
+.gnb li li{float:none;border:0;border-top:1px dotted #ccc;margin:0;padding:2px}
+.gnb li li:first-child{border:0}
+.gnb li a{display:block;font-weight:bold;color:#333;font-size:13px;padding:8px 18px;white-space:nowrap;text-decoration:none;text-shadow:0 1px 0 #fff;filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0, OffY=1, Color=#ffffff, Positive=true);zoom:1}
+.gnb li a:hover,
+.gnb li a:active,
+.gnb li a:focus,
+.gnb li.active a{background:#fff;border:1px solid #ddd;padding:7px 17px}
+.gnb li li a{color:#666;padding:5px 10px !important;font-weight:normal !important;border:0 !important}
+.gnb li li a:hover,
+.gnb li li a:active,
+.gnb li li a:focus,
+.gnb li li.active a{border:0;padding:5px 10px;background:#eee;font-weight:bold !important;letter-spacing:-1px}
+.gnb.jx ul{display:block !important;position:static;padding:0}
+.gnb.jx li{float:none;border-top:1px solid #ccc}
+.gnb.jx ul ul{border:0}
+.gnb.jx li li{border:0}
+.gnb.jx li a:hover,
+.gnb.jx li a:active,
+.gnb.jx li a:focus{background:none !important}
+</pre>
+					<h3>JS</h3>
+<pre class="codeBlock">
+jQuery(function($){
+	// Global Navigation Bar
+	var gnb = $('div.gnb');
+	var gnb_i = gnb.find('>ul>li');
+	var gnb_ii = gnb.find('>ul>li>ul>li');
+	gnb.removeClass('jx');
+	gnb_i.find('>ul').hide();
+	gnb.find('>ul>li>ul>li[class=active]').parents('li').attr('class','active');
+	gnb.find('>ul>li[class=active]').find('>ul').show();
+	function gnbToggle(event){
+		gnb_i.removeClass('active');
+		var t = $(this);
+		if (t.next('ul').is(':hidden')) {
+			gnb_i.find('>ul').slideUp(100);
+			t.next('ul').slideDown(100);
+			t.parent('li').addClass('active');
+		} else if (t.next('ul').is(':visible')){
+			t.next('ul').show();
+			t.parent('li').addClass('active');
+		} else if (!t.next('ul').langth) {
+			gnb_i.find('>ul').slideUp(100);
+			t.parent('li').removeClass('active');
+		}
+		return false;
+	}
+	gnb_i.find('>a').hover(gnbToggle).focus(gnbToggle);
+	function gnbActive(){
+		gnb_ii.removeClass('active');
+		$(this).parent(gnb_ii).addClass('active');
+		return false;
+	}; 
+	gnb_ii.find('>a[href=#]').click(gnbActive).focus(gnbActive);
+	gnb.find('li:last-child>a, li:last-child>ul>li:last-child>a').blur(gnbToggle);
+	gnb.mouseleave(gnbToggle);
+});
+</pre>
 					<h3>Lined Tab Navigation</h3>
 					<div class="tab line jx">
 						<ul>
