@@ -29,7 +29,6 @@ jQuery(function($){
 	var gnb_ii = gnb.find('>ul>li>ul>li');
 	gnb.removeClass('jx');
 	gnb_i.find('>ul').hide();
-	gnb.find('>ul>li>ul>li[class=active]').parents('li').attr('class','active');
 	gnb.find('>ul>li[class=active]').find('>ul').show();
 	function gnbToggle(event){
 		gnb_i.removeClass('active');
@@ -48,12 +47,6 @@ jQuery(function($){
 		return false;
 	}
 	gnb_i.find('>a').hover(gnbToggle).focus(gnbToggle);
-	function gnbActive(){
-		gnb_ii.removeClass('active');
-		$(this).parent(gnb_ii).addClass('active');
-		return false;
-	}; 
-	gnb_ii.find('>a[href=#]').click(gnbActive).focus(gnbActive);
 	gnb.find('li:last-child>a, li:last-child>ul>li:last-child>a').blur(gnbToggle);
 	gnb.mouseleave(gnbToggle);
 	// Lined Tab Navigation
