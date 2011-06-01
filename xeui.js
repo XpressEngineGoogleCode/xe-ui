@@ -26,7 +26,6 @@ jQuery(function($){
 	// Global Navigation Bar
 	var gnb = $('div.gnb');
 	var gnb_i = gnb.find('>ul>li');
-	var gnb_ii = gnb.find('>ul>li>ul>li');
 	gnb.removeClass('jx');
 	gnb_i.find('>ul').hide();
 	gnb.find('>ul>li[class=active]').find('>ul').show();
