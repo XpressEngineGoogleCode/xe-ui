@@ -436,14 +436,14 @@ jQuery(function($){
 					<h3>CSS</h3>
 <pre class="codeBlock">
 /* Lined Tab Navigation */
-.tab.line{padding:0 0 35px 0}
-.tab.line ul{position:relative;margin:0;padding:0;list-style:none;border-bottom:1px solid #ccc;font-family:Tahoma, Sans-serif;font-size:12px;*zoom:1}
-.tab.line ul:after{content:&quot;&quot;display:block;clear:both}
+.tab.line{padding:0 0 35px 0;margin:1em 0}
+.tab.line ul{position:relative;margin:0;padding:0;list-style:none;border-bottom:1px solid #ccc;zoom:1}
+.tab.line ul:after{content:"";display:block;clear:both}
 .tab.line li{float:left;margin-bottom:-1px}
 .tab.line li a{position:relative;float:left;text-decoration:none;border:1px solid #eee;border-bottom-color:#ccc;background:#fafafa;color:#333}
 .tab.line li a span{display:inline-block;height:14px;padding:6px 25px 6px 25px;letter-spacing:-1px;cursor:pointer}
-.tab.line li ul{width:100%;position:absolute;top:40px;left:0;list-style:none;border:0;margin:0;padding:0;white-space:nowrap;overflow:hidden;*zoom:1}
-.tab.line li ul:after{content:&quot;&quot;display:block;clear:both}
+.tab.line li ul{width:100%;position:absolute;top:40px;left:0;list-style:none;border:0;margin:0;padding:0;white-space:nowrap;overflow:hidden;zoom:1}
+.tab.line li ul:after{content:"";display:block;clear:both}
 .tab.line li li{position:relative;left:-1px;padding:0 10px;border-left:1px solid #ddd;overflow:visible}
 .tab.line li li a{padding:0;margin:0;border:0 !important;color:#666 !important;font-weight:normal;background:transparent;letter-spacing:normal}
 .tab.line li.active a{border:1px solid #ccc;border-bottom:1px solid #fff;margin-top:-1px;background:transparent}
@@ -456,7 +456,7 @@ jQuery(function($){
 .tab.line.jx ul{border:0}
 .tab.line.jx li{float:none}
 .tab.line.jx li a{float:none;display:block;font-weight:bold;color:#333;border:1px solid #eee !important;border-bottom-color:#ccc !important;background:#fafafa !important}
-.tab.line.jx li ul{position:static;display:block;padding:5px 0;left:0;top:0}
+.tab.line.jx li ul{position:static;display:block !important;padding:5px 0;left:0;top:0}
 .tab.line.jx li li{display:inline}
 .tab.line.jx li li a{display:inline;letter-spacing:normal;border:0 !important;font-weight:normal !important;color:#666 !important;background:none !important}
 .tab.line.jx li li a:hover,
@@ -560,15 +560,15 @@ jQuery(function($){
 					<h3>CSS</h3>
 <pre class="codeBlock">
 /* Faced Tab Navigation */
-.tab.face{padding:0 0 35px 0}
-.tab.face ul{position:relative;margin:0;padding:0;_padding:2px 0 0 0;list-style:none;border-bottom:2px solid #315593;font-family:Tahoma, Sans-serif;font-size:12px;*zoom:1}
+.tab.face{padding:0 0 35px 0;margin:1em 0}
+.tab.face ul{position:relative;margin:0;padding:0;_padding:2px 0 0 0;list-style:none;border-bottom:2px solid #315593;zoom:1}
 .tab.face ul:after{content:"";display:block;clear:both}
 .tab.face li{float:left;margin-right:1px;background:#4CB1E5}
 .tab.face li a,
 .tab.face li a span{position:relative;cursor:pointer}
 .tab.face li a{float:left;text-decoration:none}
 .tab.face li a span{display:inline-block;padding:6px 25px 6px 25px;color:#fff}
-.tab.face li ul{width:100%;position:absolute;top:40px;left:0;list-style:none;border:0;margin:0;padding:0;white-space:nowrap;overflow:hidden;*zoom:1}
+.tab.face li ul{width:100%;position:absolute;top:40px;left:0;list-style:none;border:0;margin:0;padding:0;white-space:nowrap;overflow:hidden;zoom:1}
 .tab.face li ul:after{content:"";display:block;clear:both}
 .tab.face li li{position:relative;left:-1px;padding:0 10px;border-left:1px solid #ddd;overflow:visible;background:transparent !important}
 .tab.face li li a{padding:0;margin:0;font-weight:normal;color:#666}
@@ -582,7 +582,7 @@ jQuery(function($){
 .tab.face.jx ul{border:0}
 .tab.face.jx li{float:none}
 .tab.face.jx li a{float:none;font-weight:bold}
-.tab.face.jx li ul{display:block;position:static;padding:5px 0;left:0;top:0;background:#fff}
+.tab.face.jx li ul{display:block !important;position:static;padding:5px 0;left:0;top:0;background:#fff}
 .tab.face.jx li li{display:inline}
 .tab.face.jx li li a{font-weight:normal !important;color:#666;letter-spacing:normal}
 .tab.face.jx li li a:hover,
@@ -698,13 +698,13 @@ jQuery(function($){
 					<h3>CSS</h3>
 <pre class="codeBlock">
 /* Tab + List */
-.tab.list{height:160px}
-.tab.list ul{position:relative;margin:0;padding:0;list-style:none;border-bottom:1px solid #ccc;font-family:Tahoma, Sans-serif;font-size:12px;*zoom:1}
+.tab.list{height:160px;margin:1em 0}
+.tab.list ul{position:relative;margin:0;padding:0;list-style:none;border-bottom:1px solid #ccc;zoom:1}
 .tab.list ul:after{content:"";display:block;clear:both}
 .tab.list li{float:left;margin-bottom:-1px}
 .tab.list li a{position:relative;float:left;text-decoration:none;border:1px solid #eee;border-bottom-color:#ccc;background:#fafafa;color:#666}
 .tab.list li a span{display:inline-block;padding:6px 25px 6px 25px;letter-spacing:-1px;cursor:pointer}
-.tab.list li ul{width:100%;position:absolute;top:40px;left:0;list-style:none;border:0;margin:0;padding:0;*zoom:1}
+.tab.list li ul{width:100%;position:absolute;top:40px;left:0;list-style:none;border:0;margin:0;padding:0;zoom:1}
 .tab.list li ul:after{content:"";display:block;clear:both}
 .tab.list li li{float:none;position:relative;margin:0 0 8px 0;color:#999}
 .tab.list li li a{float:none;padding:0;margin:0;border:0 !important;color:#666 !important;font-weight:normal;background:transparent;letter-spacing:normal}
@@ -719,7 +719,7 @@ jQuery(function($){
 .tab.list.jx ul{border:0}
 .tab.list.jx li{float:none;position:relative}
 .tab.list.jx li a{float:none;display:block;font-weight:bold;color:#333;border:1px solid #eee !important;border-bottom-color:#ccc !important;background:#fafafa !important}
-.tab.list.jx li ul{position:static;display:block;left:0;top:0;padding:5px 0}
+.tab.list.jx li ul{position:static;display:block !important;left:0;top:0;padding:5px 0}
 .tab.list.jx li li a{display:inline;border:0 !important;background:none !important;font-weight:normal}
 .tab.list.jx li li.more{top:7px;right:15px}
 </pre>
