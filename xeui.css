@@ -29,8 +29,8 @@ img{border:0}
 .portlet .lined{margin:1px;padding:0;list-style:none}
 .portlet .lined li{padding:.5em 1em;border-top:1px solid #eee}
 .portlet .lined li:first-child{border:0}
-.portlet .time{position:absolute;top:0;right:1em;color:#666}
-.portlet .lined .time{top:.5em}
+.portlet .add{position:absolute;top:0;right:1em;color:#666}
+.portlet .lined .add{top:.5em}
 .portlet .more{position:absolute;top:.5em;right:1em;text-decoration:none !important}
 .portlet .more span{color:#999}
 /* Table */
@@ -154,8 +154,7 @@ img{border:0}
 .tab.list li li a:hover,
 .tab.list li li a:active,
 .tab.list li li a:focus{color:#000 !important;text-decoration:underline}
-.tab.list li li time,
-.tab.list li li .time{position:absolute;top:0;right:0;color:#767676}
+.tab.list li li .add{position:absolute;top:0;right:0;color:#767676}
 .tab.list li li.more{position:absolute;top:-30px;right:0;border:0 !important;background:transparent}
 .tab.list li.active a{border:1px solid #ccc;border-bottom:1px solid #fff;margin-top:-1px;background:transparent;color:#333}
 .tab.list li.active a span{padding-top:7px;font-weight:bold}
