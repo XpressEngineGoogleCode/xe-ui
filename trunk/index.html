@@ -255,6 +255,7 @@ img{border:0}
 			<article class="item" id="navigation">
 				<h2>Navigation</h2>
 				<div class="container">
+					<p>Navigation is displayed differently in the resolution of 640px or less. Resizing the width of your browser, try it.</p>
 					<h3>Global Navigation Bar</h3>
 					<div class="gnb">
 						<ul>
@@ -341,29 +342,40 @@ img{border:0}
 jQuery(function($){
 	// Global Navigation Bar
 	var gnb = $('div.gnb');
-	var gnb_i = gnb.find('>ul>li');
-	var gnb_ii = gnb.find('>ul>li>ul>li');
+	var gnb_i = gnb.find('&gt;ul&gt;li');
 	gnb.removeClass('jx');
-	gnb_i.find('>ul').hide();
-	gnb.find('>ul>li[class=active]').find('>ul').show();
-	function gnbToggle(event){
-		gnb_i.removeClass('active');
-		var t = $(this);
-		if (t.next('ul').is(':hidden')) {
-			gnb_i.find('>ul').slideUp(100);
-			t.next('ul').slideDown(100);
-			t.parent('li').addClass('active');
-		} else if (t.next('ul').is(':visible')){
-			t.next('ul').show();
-			t.parent('li').addClass('active');
-		} else if (!t.next('ul').langth) {
-			gnb_i.find('>ul').slideUp(100);
-			t.parent('li').removeClass('active');
-		}
-		return false;
+	if($(document).width()&lt;=640){
+		gnb.addClass('jx');	
 	}
-	gnb_i.find('>a').hover(gnbToggle).focus(gnbToggle);
-	gnb.find('li:last-child>a, li:last-child>ul>li:last-child>a').blur(gnbToggle);
+	$(window).resize(function(){
+		if($(document).width()&lt;=640){
+		gnb.addClass('jx');	
+		} else {
+		gnb.removeClass('jx');
+		}
+	});
+	gnb_i.find('&gt;ul').hide();
+	gnb.find('&gt;ul&gt;li[class=active]').find('&gt;ul').show();
+	function gnbToggle(event){
+		if (!gnb.hasClass('jx')){
+			gnb_i.removeClass('active');
+			var t = $(this);
+			if (t.next('ul').is(':hidden')) {
+				gnb_i.find('&gt;ul').slideUp(100);
+				t.next('ul').slideDown(100);
+				t.parent('li').addClass('active');
+			} else if (t.next('ul').is(':visible')){
+				t.next('ul').show();
+				t.parent('li').addClass('active');
+			} else if (!t.next('ul').langth) {
+				gnb_i.find('&gt;ul').slideUp(100);
+				t.parent('li').removeClass('active');
+			}
+			return false;
+		}
+	}
+	gnb_i.find('&gt;a').hover(gnbToggle).focus(gnbToggle);
+	gnb.find('li:last-child&gt;a, li:last-child&gt;ul&gt;li:last-child&gt;a').blur(gnbToggle);
 	gnb.mouseleave(gnbToggle);
 });
 </pre>
@@ -456,27 +468,39 @@ jQuery(function($){
 jQuery(function($){
 	// Lined Tab Navigation
 	var tab_line = $('div.tab.line');
-	var tab_line_i = tab_line.find('>ul>li');
-	var tab_line_ii = tab_line.find('>ul>li>ul>li');
+	var tab_line_i = tab_line.find('&lt;ul&lt;li');
+	var tab_line_ii = tab_line.find('&lt;ul&lt;li&lt;ul&lt;li');
 	tab_line.removeClass('jx');
-	tab_line_i.find('>ul').hide();
-	tab_line_i.find('>ul>li[class=active]').parents('li').attr('class','active');
-	tab_line.find('>ul>li[class=active]').find('>ul').show();
+	if($(document).width()&lt;=640){
+		tab_line.addClass('jx');	
+	}
+	$(window).resize(function(){
+		if($(document).width()&lt;=640){
+		tab_line.addClass('jx');	
+		} else {
+		tab_line.removeClass('jx');
+		}
+	});
+	tab_line_i.find('&gt;ul').hide();
+	tab_line_i.find('&lt;ul&lt;li[class=active]').parents('li').attr('class','active');
+	tab_line.find('&lt;ul&lt;li[class=active]').find('&gt;ul').show();
 	function lineTabMenuToggle(event){
-		var t = $(this);
-		tab_line_i.find('>ul').hide();
-		t.next('ul').show();
-		tab_line_i.removeClass('active');
-		t.parent('li').addClass('active');
-		return false;
+		if (!tab_line.hasClass('jx')){
+			var t = $(this);
+			tab_line_i.find('&gt;ul').hide();
+			t.next('ul').show();
+			tab_line_i.removeClass('active');
+			t.parent('li').addClass('active');
+			return false;
+		}
 	}
 	function lineTabSubMenuActive(){
 		tab_line_ii.removeClass('active');
 		$(this).parent(tab_line_ii).addClass('active');
 		return false;
 	}; 
-	tab_line_i.find('>a[href=#]').click(lineTabMenuToggle).focus(lineTabMenuToggle);
-	tab_line_ii.find('>a[href=#]').click(lineTabSubMenuActive).focus(lineTabSubMenuActive);
+	tab_line_i.find('&gt;a[href=#]').click(lineTabMenuToggle).focus(lineTabMenuToggle);
+	tab_line_ii.find('&gt;a[href=#]').click(lineTabSubMenuActive).focus(lineTabSubMenuActive);
 });
 </pre>
 					<h3>Faced Tab Navigation</h3>
@@ -570,27 +594,39 @@ jQuery(function($){
 jQuery(function($){
 	// Faced Tab Navigation
 	var tab_face = $('div.tab.face');
-	var tab_face_i = tab_face.find('>ul>li');
-	var tab_face_ii = tab_face.find('>ul>li>ul>li');
+	var tab_face_i = tab_face.find('&gt;ul&gt;li');
+	var tab_face_ii = tab_face.find('&gt;ul&gt;li&gt;ul&gt;li');
 	tab_face.removeClass('jx');
-	tab_face_i.find('>ul').hide();
-	tab_face_i.find('>ul>li[class=active]').parents('li').attr('class','active');
-	tab_face.find('>ul>li[class=active]').find('>ul').show();
+	if($(document).width()&lt;=640){
+		tab_face.addClass('jx');	
+	}
+	$(window).resize(function(){
+		if($(document).width()&lt;=640){
+		tab_face.addClass('jx');	
+		} else {
+		tab_face.removeClass('jx');
+		}
+	});
+	tab_face_i.find('&gt;ul').hide();
+	tab_face_i.find('&gt;ul&gt;li[class=active]').parents('li').attr('class','active');
+	tab_face.find('&gt;ul&gt;li[class=active]').find('&gt;ul').show();
 	function faceTabMenuToggle(event){
-		var t = $(this);
-		tab_face_i.find('>ul').hide();
-		t.next('ul').show();
-		tab_face_i.removeClass('active');
-		t.parent('li').addClass('active');
-		return false;
+		if (!tab_face.hasClass('jx')){
+			var t = $(this);
+			tab_face_i.find('&gt;ul').hide();
+			t.next('ul').show();
+			tab_face_i.removeClass('active');
+			t.parent('li').addClass('active');
+			return false;
+		}
 	}
 	function faceTabSubMenuActive(){
 		tab_face_ii.removeClass('active');
 		$(this).parent(tab_face_ii).addClass('active');
 		return false;
 	}; 
-	tab_face_i.find('>a[href=#]').click(faceTabMenuToggle).focus(faceTabMenuToggle);
-	tab_face_ii.find('>a[href=#]').click(faceTabSubMenuActive).focus(faceTabSubMenuActive);
+	tab_face_i.find('&gt;a[href=#]').click(faceTabMenuToggle).focus(faceTabMenuToggle);
+	tab_face_ii.find('&gt;a[href=#]').click(faceTabSubMenuActive).focus(faceTabSubMenuActive);
 });
 </pre>
 					<h3>List Tab Navigation</h3>
@@ -692,21 +728,39 @@ jQuery(function($){
 jQuery(function($){
 	// List Tab Navigation
 	var tab_list = $('div.tab.list');
-	var tab_list_i = tab_list.find('>ul>li');
+	var tab_list_i = tab_list.find('&gt;ul&gt;li');
 	tab_list.removeClass('jx');
-	tab_list_i.find('>ul').hide();
-	tab_list.find('>ul>li[class=active]').find('>ul').show();
-	tab_list.css('height', tab_list.find('>ul>li.active>ul').height()+40);
-	function listTabMenuToggle(event){
-		var t = $(this);
-		tab_list_i.find('>ul').hide();
-		t.next('ul').show();
-		tab_list_i.removeClass('active');
-		t.parent('li').addClass('active');
-		tab_list.css('height', t.next('ul').height()+40);
-		return false;
+	if($(document).width()&lt;=640){
+		tab_list.addClass('jx');	
 	}
-	tab_list_i.find('>a[href=#]').click(listTabMenuToggle).focus(listTabMenuToggle);
+	$(window).resize(function(){
+		if($(document).width()&lt;=640){
+		tab_list.addClass('jx');
+		tab_list.css('height','auto');
+		} else {
+		tab_list.removeClass('jx');
+		tab_list.css('height', tab_list.find('&gt;ul&gt;li.active&gt;ul').height()+40);
+		}
+	});
+	tab_list_i.find('&gt;ul').hide();
+	tab_list.find('&gt;ul&gt;li[class=active]').find('&gt;ul').show();
+	if (!tab_list.hasClass('jx')){
+		tab_list.css('height', tab_list.find('&gt;ul&gt;li.active&gt;ul').height()+40);
+	} else {
+		tab_list.css('height','auto');
+	}
+	function listTabMenuToggle(event){
+		if (!tab_list.hasClass('jx')){
+			var t = $(this);
+			tab_list_i.find('&gt;ul').hide();
+			t.next('ul').show();
+			tab_list_i.removeClass('active');
+			t.parent('li').addClass('active');
+			tab_list.css('height', t.next('ul').height()+40);
+			return false;
+		}
+	}
+	tab_list_i.find('&gt;a[href=#]').click(listTabMenuToggle).focus(listTabMenuToggle);
 });
 </pre>
 					<h3>Vertical Navigation</h3>
@@ -790,33 +844,33 @@ jQuery(function($){
 jQuery(function($){
 	// Vertical Navigation
 	var vNav = $('div.vNav');
-	var vNav_i = vNav.find('>ul>li');
-	var vNav_ii = vNav.find('>ul>li>ul>li');
-	vNav_i.find('>ul').hide();
-	vNav.find('>ul>li>ul>li[class=active]').parents('li').attr('class','active');
-	vNav.find('>ul>li[class=active]').find('>ul').show();
+	var vNav_i = vNav.find('&lt;ul&lt;li');
+	var vNav_ii = vNav.find('&lt;ul&lt;li&lt;ul&lt;li');
+	vNav_i.find('&gt;ul').hide();
+	vNav.find('&lt;ul&lt;li&lt;ul&lt;li[class=active]').parents('li').attr('class','active');
+	vNav.find('&lt;ul&lt;li[class=active]').find('&gt;ul').show();
 	function vNavToggle(event){
 		var t = $(this);
 		if (t.next('ul').is(':hidden')) {
-			vNav_i.find('>ul').slideUp(100);
+			vNav_i.find('&gt;ul').slideUp(100);
 			t.next('ul').slideDown(100);
 		} else if (t.next('ul').is(':visible')){
 			t.next('ul').show();
 		} else if (!t.next('ul').langth) {
-			vNav_i.find('>ul').slideUp(100);
+			vNav_i.find('&gt;ul').slideUp(100);
 		}
 		vNav_i.removeClass('active');
 		t.parent('li').addClass('active');
 		return false;
 	}
-	vNav_i.find('>a[href=#]').click(vNavToggle).focus(vNavToggle);
+	vNav_i.find('&gt;a[href=#]').click(vNavToggle).focus(vNavToggle);
 	function vNavActive(){
 		vNav_ii.removeClass('active');
 		$(this).parent(vNav_ii).addClass('active');
 		return false;
 	}; 
-	vNav_ii.find('>a[href=#]').click(vNavActive).focus(vNavActive);
-	vNav.find('>ul>li>ul').prev('a').append('&lt;span class="i"&gt;&lt;/span&gt;');
+	vNav_ii.find('&gt;a[href=#]').click(vNavActive).focus(vNavActive);
+	vNav.find('&lt;ul&lt;li&gt;ul').prev('a').append('&lt;span class="i"&gt;&lt;/span&gt;');
 });
 </pre>
 					<h3>Tree Navigation</h3>
@@ -906,23 +960,23 @@ jQuery(function($){
 	var tNav = $('.tNav');
 	var tNavPlus = '\&lt;button type=\"button\" class=\"tNavToggle plus\"\&gt;+\&lt;\/button\&gt;';
 	var tNavMinus = '\&lt;button type=\"button\" class=\"tNavToggle minus\"\&gt;-\&lt;\/button\&gt;';
-	tNav.find('li>ul').css('display','none');
+	tNav.find('li&gt;ul').css('display','none');
 	tNav.find('ul>li:last-child').addClass('last');
-	tNav.find('li>ul:hidden').parent('li').prepend(tNavPlus);
-	tNav.find('li>ul:visible').parent('li').prepend(tNavMinus);
+	tNav.find('li&gt;ul:hidden').parent('li').prepend(tNavPlus);
+	tNav.find('li&gt;ul:visible').parent('li').prepend(tNavMinus);
 	tNav.find('li.active').addClass('open').parents('li').addClass('open');
 	tNav.find('li.open').parents('li').addClass('open');
 	tNav.find('li.open>.tNavToggle').text('-').removeClass('plus').addClass('minus');
-	tNav.find('li.open>ul').slideDown(100);
+	tNav.find('li.open&gt;ul').slideDown(100);
 	$('.tNav .tNavToggle').click(function(){
 		t = $(this);
 		t.parent('li').toggleClass('open');
 		if(t.parent('li').hasClass('open')){
 			t.text('-').removeClass('plus').addClass('minus');
-			t.parent('li').find('>ul').slideDown(100);
+			t.parent('li').find('&gt;ul').slideDown(100);
 		} else {
 			t.text('+').removeClass('minus').addClass('plus');
-			t.parent('li').find('>ul').slideUp(100);
+			t.parent('li').find('&gt;ul').slideUp(100);
 		}
 		return false;
 	});
@@ -931,10 +985,10 @@ jQuery(function($){
 		t.parent('li').toggleClass('open');
 		if(t.parent('li').hasClass('open')){
 			t.prev('button.tNavToggle').text('-').removeClass('plus').addClass('minus');
-			t.parent('li').find('>ul').slideDown(100);
+			t.parent('li').find('&gt;ul').slideDown(100);
 		} else {
 			t.prev('button.tNavToggle').text('+').removeClass('minus').addClass('plus');
-			t.parent('li').find('>ul').slideUp(100);
+			t.parent('li').find('&gt;ul').slideUp(100);
 		}
 		return false;
 	});
