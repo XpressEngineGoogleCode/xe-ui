@@ -2130,7 +2130,6 @@ jQuery(function($){
 	layerAnchor.click(function(){
 		layer.fadeOut().removeClass('layerActive');
 		$($(this).attr('href')).fadeToggle().toggleClass('layerActive').find('&gt;.layerClose:first').focus();
-		return false;
 	});
 	function closeLayer() {
 		layer.fadeOut().removeClass('layerActive');
