@@ -271,20 +271,21 @@ jQuery(function($){
 	var layerBlur = $('.layerBlur');
 	layerBlur.eq(0).clone().appendTo(layer);
 	layerAnchor.click(function(){
+		layer.fadeOut().removeClass('layerActive');
 		$($(this).attr('href')).fadeToggle().toggleClass('layerActive').find('>.layerClose:first').focus();
 		return false;
 	});
+	function closeLayer() {
+		layer.fadeOut().removeClass('layerActive');
+		var closeId = layer.filter(':visible').attr("id");
+		if(closeId) layerAnchor.filter('[href="#'+closeId+'"]').focus();
+		return false;
+	}
 	$(document).keydown(function(event){
-		if(event.keyCode != 27) return true;
-		layer.fadeOut().removeClass('layerActive');
-		layerAnchor.focus();
-		return false;
+		if(event.keyCode != 27) return true; // ESC
+		return closeLayer();
 	});
-	$('body, .layerClose').click(function(event){
-		layer.fadeOut().removeClass('layerActive');
-		layerAnchor.focus();
-		return false;
-	});
+	$('body, .layerClose').click(closeLayer);
 	$('.layerBlur').focusin(function(event){
 		layerClose.click();
 	});
@@ -292,8 +293,8 @@ jQuery(function($){
 	var htmlBody = $('html,body');
 	var modalAnchor = $('.modalAnchor');
 	var modal = $('.modal');
-	var modalBg = $('.modal>.bg');
-	var modalFg = $('.modal>.fg');
+	var modalBg = modal.find('>.bg');
+	var modalFg = modal.find('>.fg');
 	var modalCloseHtml = '<button type="button" class="modalClose" title="Close this layer">X</button>';
 	var modalBlurHtml = '<button type="button" class="modalBlur"></button>';
 	modal.appendTo('body').hide().prepend('<span class="bg"></span>');
@@ -310,7 +311,7 @@ jQuery(function($){
 		return false;
 	});
 	$(document).keydown(function(event){
-		if(event.keyCode != 27) return true;
+		if(event.keyCode != 27) return true; // ESC
 		htmlBody.removeAttr('style');
 		modal.fadeOut().removeClass('modalActive');
 		modalAnchor.focus();
