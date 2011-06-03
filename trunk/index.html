@@ -1058,13 +1058,21 @@ jQuery(function($){
 <pre class="codeBlock">
 /* Table */
 .table{margin:1em 0}
-.table table{width:100%;border:0;border-collapse:collapse;border-top:2px solid #666}
+.table table{width:100%;border:0;border-collapse:collapse;border-top:2px solid #ccc}
 .table caption{padding:8px 0;font-weight:bold;text-align:left}
 .table caption em{float:right;font-style:normal;font-weight:normal;color:#f60}
 .table th,.table td{border:0;padding:8px;vertical-align:top;text-align:left;border-bottom:1px solid #ddd}
 .table th{background:#f8f8f8}
 .table thead th{border-bottom:1px solid #999}
 .table tfoot td{font-weight:bold;background:#f8f8f8}
+.h1 + .table,
+.h2 + .table,
+.h3 + .table,
+.h4 + .table{margin-top:-1em}
+.h1 + .table table,
+.h2 + .table table,
+.h3 + .table table,
+.h4 + .table table{border-top:0}
 </pre>
 					<h3>Preview</h3>
 					<div class="table">
