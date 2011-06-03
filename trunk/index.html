@@ -2073,13 +2073,20 @@ jQuery(function($){
 				</div>
 			</article>
 			<hr />
-			<article class="item" id="layer">
+			<article class="item work" id="layer">
 				<h2>Layer</h2>
 				<div class="container">
 					<h3>Preview</h3>
-					<a href="#myLayer" class="layerAnchor">Show me the layer!</a>
-					<div class="layer" id="myLayer">
-						<h2 class="h2">Heading</h2>
+					<a href="#firstLayer" class="layerAnchor">Show me the first layer!</a>
+					<div class="layer" id="firstLayer">
+						<h2 class="h2">First Layer</h2>
+						<p>Layer content. Test Anchor <a href="#">#1</a>. Test Anchor <a href="#">#2</a>.</p>
+						<p>Click background or press the ESC key when you close this window.</p>
+					</div>
+					|
+					<a href="#secondLayer" class="layerAnchor">Show me the second layer!</a>
+					<div class="layer" id="secondLayer">
+						<h2 class="h2">Second Layer</h2>
 						<p>Layer content. Test Anchor <a href="#">#1</a>. Test Anchor <a href="#">#2</a>.</p>
 						<p>Click background or press the ESC key when you close this window.</p>
 					</div>
@@ -2109,13 +2116,12 @@ jQuery(function($){
 	var layerBlurHtml = '&lt;button type=&quot;button&quot; class=&quot;layerBlur&quot;&gt;&lt;/button&gt;';
 	layer.hide().prepend(layerCloseHtml);
 	var layerClose = $('.layerClose');
-	layerClose.clone().appendTo(layer);
+	layerClose.eq(0).clone().appendTo(layer);
 	layer.prepend(layerBlurHtml);
 	var layerBlur = $('.layerBlur');
-	layerBlur.clone().appendTo(layer);
+	layerBlur.eq(0).clone().appendTo(layer);
 	layerAnchor.click(function(){
-		layer.fadeToggle().toggleClass('layerActive');
-		layer.find('&gt;.layerClose:first').focus();
+		$($(this).attr('href')).fadeToggle().toggleClass('layerActive').find('&gt;.layerClose:first').focus();
 		return false;
 	});
 	$(document).keydown(function(event){
@@ -2183,10 +2189,10 @@ jQuery(function($){
 	modal.appendTo('body').hide().prepend('&lt;span class=&quot;<em>bg</em>&quot;&gt;&lt;/span&gt;');
 	modalFg.prepend(modalCloseHtml);
 	var modalClose = $('.modalClose');
-	modalClose.clone().appendTo(modalFg);
+	modalClose.eq(0).clone().appendTo(modalFg);
 	modalFg.prepend(modalBlurHtml);
 	var modalBlur = $('.modalBlur');
-	modalBlur.clone().appendTo(modalFg);
+	modalBlur.eq(0).clone().appendTo(modalFg);
 	modalAnchor.click(function(){
 		htmlBody.css({'width':'100%','height':'100%'});
 		modal.fadeToggle().toggleClass('modalActive');
