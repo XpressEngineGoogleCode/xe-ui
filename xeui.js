@@ -266,13 +266,12 @@ jQuery(function($){
 	var layerBlurHtml = '<button type="button" class="layerBlur"></button>';
 	layer.hide().prepend(layerCloseHtml);
 	var layerClose = $('.layerClose');
-	layerClose.clone().appendTo(layer);
+	layerClose.eq(0).clone().appendTo(layer);
 	layer.prepend(layerBlurHtml);
 	var layerBlur = $('.layerBlur');
-	layerBlur.clone().appendTo(layer);
+	layerBlur.eq(0).clone().appendTo(layer);
 	layerAnchor.click(function(){
-		layer.fadeToggle().toggleClass('layerActive');
-		layer.find('>.layerClose:first').focus();
+		$($(this).attr('href')).fadeToggle().toggleClass('layerActive').find('>.layerClose:first').focus();
 		return false;
 	});
 	$(document).keydown(function(event){
@@ -300,10 +299,10 @@ jQuery(function($){
 	modal.appendTo('body').hide().prepend('<span class="bg"></span>');
 	modalFg.prepend(modalCloseHtml);
 	var modalClose = $('.modalClose');
-	modalClose.clone().appendTo(modalFg);
+	modalClose.eq(0).clone().appendTo(modalFg);
 	modalFg.prepend(modalBlurHtml);
 	var modalBlur = $('.modalBlur');
-	modalBlur.clone().appendTo(modalFg);
+	modalBlur.eq(0).clone().appendTo(modalFg);
 	modalAnchor.click(function(){
 		htmlBody.css({'width':'100%','height':'100%'});
 		modal.fadeToggle().toggleClass('modalActive');
