@@ -279,7 +279,6 @@ jQuery(function($){
 		layer.fadeOut().removeClass('layerActive');
 		var closeId = layer.filter(':visible').attr("id");
 		if(closeId) layerAnchor.filter('[href="#'+closeId+'"]').focus();
-		return false;
 	}
 	$(document).keydown(function(event){
 		if(event.keyCode != 27) return true; // ESC
