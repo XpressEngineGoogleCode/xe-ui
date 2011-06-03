@@ -196,8 +196,8 @@ jQuery(function($){
 	vNav.find('>ul>li>ul').prev('a').append('<span class="i"></span>');
 	// Tree Navigation
 	var tNav = $('.tNav');
-	var tNavPlus = '\<button type=\"button\" class=\"tNavToggle plus\"\>+\<\/button\>';
-	var tNavMinus = '\<button type=\"button\" class=\"tNavToggle minus\"\>-\<\/button\>';
+	var tNavPlus = '<button type="button" class="tNavToggle plus">+</button>';
+	var tNavMinus = '<button type="button" class="tNavToggle minus">-</button>';
 	tNav.find('li>ul').css('display','none');
 	tNav.find('ul>li:last-child').addClass('last');
 	tNav.find('li>ul:hidden').parent('li').prepend(tNavPlus);
@@ -258,6 +258,36 @@ jQuery(function($){
 			article.removeClass('show').addClass('hide');
 			article.find('.a').slideUp(100);
 		}
+	});
+	// Layer
+	var layerAnchor = $('.layerAnchor');
+	var layer = $('.layer');
+	var layerCloseHtml = '<button type="button" class="layerClose" title="Close this layer">X</button>';
+	var layerBlurHtml = '<button type="button" class="layerBlur"></button>';
+	layer.hide().prepend(layerCloseHtml);
+	var layerClose = $('.layerClose');
+	layerClose.clone().appendTo(layer);
+	layer.prepend(layerBlurHtml);
+	var layerBlur = $('.layerBlur');
+	layerBlur.clone().appendTo(layer);
+	layerAnchor.click(function(){
+		layer.fadeToggle().toggleClass('layerActive');
+		layer.find('>.layerClose:first').focus();
+		return false;
+	});
+	$(document).keydown(function(event){
+		if(event.keyCode != 27) return true;
+		layer.fadeOut().removeClass('layerActive');
+		layerAnchor.focus();
+		return false;
+	});
+	$('body, .layerClose').click(function(event){
+		layer.fadeOut().removeClass('layerActive');
+		layerAnchor.focus();
+		return false;
+	});
+	$('.layerBlur').focusin(function(event){
+		layerClose.click();
 	});
 	// Modal Window
 	var htmlBody = $('html,body');

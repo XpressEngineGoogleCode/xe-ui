@@ -30,6 +30,7 @@
 				<li><a href="#faq">FAQ</a></li>
 				<li><a href="#graph">Graph</a></li>
 				<li><a href="#progress">Progress</a></li>
+				<li><a href="#layer">Layer</a></li>
 				<li><a href="#modalWindow">Modal Window</a></li>
 			</ul>
 		</nav>
@@ -958,15 +959,15 @@ jQuery(function($){
 jQuery(function($){
 	// Tree Navigation
 	var tNav = $('.tNav');
-	var tNavPlus = '\&lt;button type=\"button\" class=\"tNavToggle plus\"\&gt;+\&lt;\/button\&gt;';
-	var tNavMinus = '\&lt;button type=\"button\" class=\"tNavToggle minus\"\&gt;-\&lt;\/button\&gt;';
+	var tNavPlus = '&lt;button type="button" class="tNavToggle plus"&gt;+&lt;/button&gt;';
+	var tNavMinus = '&lt;button type="button" class="tNavToggle minus"&gt;-&lt;/button&gt;';
 	tNav.find('li&gt;ul').css('display','none');
-	tNav.find('ul>li:last-child').addClass('last');
+	tNav.find('ul&gt;li:last-child').addClass('last');
 	tNav.find('li&gt;ul:hidden').parent('li').prepend(tNavPlus);
 	tNav.find('li&gt;ul:visible').parent('li').prepend(tNavMinus);
 	tNav.find('li.active').addClass('open').parents('li').addClass('open');
 	tNav.find('li.open').parents('li').addClass('open');
-	tNav.find('li.open>.tNavToggle').text('-').removeClass('plus').addClass('minus');
+	tNav.find('li.open&gt;.tNavToggle').text('-').removeClass('plus').addClass('minus');
 	tNav.find('li.open&gt;ul').slideDown(100);
 	$('.tNav .tNavToggle').click(function(){
 		t = $(this);
@@ -1848,7 +1849,7 @@ jQuery(function($){
 <pre class="codeBlock">
 jQuery(function($){
 	// Frequently Asked Question
-	var article = $('.faq>.faqBody>.article');
+	var article = $('.faq&gt;.faqBody&gt;.article');
 	article.addClass('hide');
 	article.find('.a').hide();
 	article.eq(0).removeClass('hide');
@@ -2072,6 +2073,69 @@ jQuery(function($){
 				</div>
 			</article>
 			<hr />
+			<article class="item work" id="layer">
+				<h2>Layer</h2>
+				<div class="container">
+					<h3>Preview</h3>
+					<a href="#myLayer" class="layerAnchor">Show me the layer!</a>
+					<div class="layer" id="myLayer">
+						<h2 class="h2">Heading</h2>
+						<p>Layer content. Test Anchor <a href="#">#1</a>. Test Anchor <a href="#">#2</a>.</p>
+						<p>Click background or press the ESC key when you close this window.</p>
+					</div>
+					<h3>HTML</h3>
+<pre class="codeBlock">
+&lt;a href=&quot;<em>#myLayer</em>&quot; class=&quot;<em>layerAnchor</em>&quot;&gt;Show me the layer!&lt;/a&gt;
+&lt;div class=&quot;<em>layer</em>&quot; id=&quot;<em>myLayer</em>&quot;&gt;
+	&lt;h2 class=&quot;<em>h2</em>&quot;&gt;Heading&lt;/h2&gt;
+	&lt;p&gt;Layer content. Test Anchor &lt;a href=&quot;#&quot;&gt;#1&lt;/a&gt;. Test Anchor &lt;a href=&quot;#&quot;&gt;#2&lt;/a&gt;.&lt;/p&gt;
+	&lt;p&gt;Click background or press the ESC key when you close this window.&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+					<h3>CSS</h3>
+<pre class="codeBlock">
+/* Layer */
+.layer{position:absolute;background:#fff;padding:0 1em;*padding:1em;border:10px solid #ddd;z-index:2;zoom:1}
+.layerClose{position:absolute;right:-10px;top:-10px;border:0;background:#ddd;padding:0;width:34px;height:34px;font-size:16px;font-weight:bold;cursor:pointer;color:#999}
+.layerBlur{position:absolute;top:0;right:0;border:0;background:none;padding:0;width:1px;height:1px;overflow:hidden}
+</pre>
+					<h3>JS</h3>
+<pre class="codeBlock">
+jQuery(function($){
+	// Layer
+	var layerAnchor = $('.layerAnchor');
+	var layer = $('.layer');
+	var layerCloseHtml = '&lt;button type=&quot;button&quot; class=&quot;layerClose&quot; title=&quot;Close this layer&quot;&gt;X&lt;/button&gt;';
+	var layerBlurHtml = '&lt;button type=&quot;button&quot; class=&quot;layerBlur&quot;&gt;&lt;/button&gt;';
+	layer.hide().prepend(layerCloseHtml);
+	var layerClose = $('.layerClose');
+	layerClose.clone().appendTo(layer);
+	layer.prepend(layerBlurHtml);
+	var layerBlur = $('.layerBlur');
+	layerBlur.clone().appendTo(layer);
+	layerAnchor.click(function(){
+		layer.fadeToggle().toggleClass('layerActive');
+		layer.find('&gt;.layerClose:first').focus();
+		return false;
+	});
+	$(document).keydown(function(event){
+		if(event.keyCode != 27) return true;
+		layer.fadeOut().removeClass('layerActive');
+		layerAnchor.focus();
+		return false;
+	});
+	$('body, .layerClose').click(function(event){
+		layer.fadeOut().removeClass('layerActive');
+		layerAnchor.focus();
+		return false;
+	});
+	$('.layerBlur').focusin(function(event){
+		layerClose.click();
+	});
+});
+</pre>
+				</div>
+			</article>
 			<article class="item" id="modalWindow">
 				<h2>Modal Window</h2>
 				<div class="container">
@@ -2086,9 +2150,10 @@ jQuery(function($){
 					</div>
 					<h3>HTML</h3>
 <pre class="codeBlock">
-&lt;a href=&quot;#myLove&quot; class=&quot;<em>modalAnchor</em>&quot;&gt;Show me the modal window!&lt;/a&gt;
-&lt;div class=&quot;<em>modal</em>&quot; id=&quot;myLove&quot;&gt;
+&lt;a href=&quot;<em>#myLove</em>&quot; class=&quot;<em>modalAnchor</em>&quot;&gt;Show me the modal window!&lt;/a&gt;
+&lt;div class=&quot;<em>modal</em>&quot; id=&quot;<em>myLove</em>&quot;&gt;
 	&lt;div class=&quot;<em>fg</em>&quot;&gt;
+		&lt;h2 class=&quot;<em>h2</em>&quot;&gt;Heading&lt;/h2&gt;
 		&lt;p&gt;Modal windowed content. Test Anchor &lt;a href=&quot;#&quot;&gt;1&lt;/a&gt;. Test Anchor &lt;a href=&quot;#&quot;&gt;2&lt;/a&gt;&lt;/p&gt;
 		&lt;p&gt;Click background or press the ESC key when you close this window.&lt;/p&gt;
 	&lt;/div&gt;
