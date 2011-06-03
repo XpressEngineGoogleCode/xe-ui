@@ -32,6 +32,7 @@
 				<li><a href="#progress">Progress</a></li>
 				<li><a href="#layer">Layer</a></li>
 				<li><a href="#modalWindow">Modal Window</a></li>
+				<li><a href="#toggle">Toggle</a></li>
 			</ul>
 		</nav>
 		<hr />
@@ -1715,7 +1716,7 @@ jQuery(function($){
 .portlet .lined li:first-child{border:0}
 .portlet .add{position:absolute; top:0; right:1em; color:#666}
 .portlet .lined .add{top:.5em}
-.portlet .more{position:absolute;top:.5em;right:1em;text-decoration:none !important}
+.portlet .more{position:absolute;top:.5em;right:1em;text-decoration:none !important;color:#666}
 .portlet .more span{color:#999}
 </pre>
 					<h3>Heading + Paragraph</h3>
@@ -2140,17 +2141,16 @@ jQuery(function($){
 		$($(this).attr('href')).fadeToggle().toggleClass('layerActive').find('&gt;.layerClose:first').focus();
 	});
 	function closeLayer() {
-		layer.fadeOut().removeClass('layerActive');
 		var closeId = layer.filter(':visible').attr(&quot;id&quot;);
 		if(closeId) layerAnchor.filter('[href=&quot;#'+closeId+'&quot;]').focus();
+		layer.fadeOut().removeClass('layerActive');
 		return false;
 	}
 	$(document).keydown(function(event){
 		if(event.keyCode != 27) return true; // ESC
 		return closeLayer();
 	});
-	layer.click(function(){ return false });
-	$('html, .layerClose').click(closeLayer);
+	$('.layerClose').click(closeLayer);
 	$('.layerBlur').focusin(function(event){
 		layerClose.click();
 	});
@@ -2230,6 +2230,54 @@ jQuery(function($){
 	});
 	$('.modalBlur').focusin(function(event){
 		modalClose.click();
+	});
+});
+</pre>
+				</div>
+			</article>
+			<hr />
+			<article class="item" id="toggle">
+				<h2>Toggle</h2>
+				<div class="container">
+					<h3>Preview</h3>
+					<p><a href="#tg1" class="tgSimple">Show me the simple toggle!</a></p>
+					<p id="tg1" class="tgContent">Simple toggle. <a href="#">#1</a> <a href="#">#2</a> #3</p>
+					<p><a href="#tg2" class="tgSlide">Show me the slide toggle!</a></p>
+					<p id="tg2" class="tgContent">Slide toggle. <a href="#">#1</a> <a href="#">#2</a> #3</p>
+					<p><a href="#tg3" class="tgFade">Show me the fade toggle!</a></p>
+					<p id="tg3" class="tgContent">Fade toggle. <a href="#">#1</a> <a href="#">#2</a> #3</p>
+					<h3>HTML</h3>
+<pre class="codeBlock">
+&lt;p&gt;&lt;a href=&quot;<em>#tg1</em>&quot; class=&quot;<em>tgSimple</em>&quot;&gt;Show me the simple toggle!&lt;/a&gt;&lt;/p&gt;
+&lt;p id=&quot;<em>tg1</em>&quot; class=&quot;<em>tgContent</em>&quot;&gt;Simple toggle. &lt;a href=&quot;#&quot;&gt;#1&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;#2&lt;/a&gt; #3&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;<em>#tg2</em>&quot; class=&quot;<em>tgSlide</em>&quot;&gt;Show me the slide toggle!&lt;/a&gt;&lt;/p&gt;
+&lt;p id=&quot;<em>tg2</em>&quot; class=&quot;<em>tgContent</em>&quot;&gt;Slide toggle. &lt;a href=&quot;#&quot;&gt;#1&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;#2&lt;/a&gt; #3&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;<em>#tg3</em>&quot; class=&quot;<em>tgFade</em>&quot;&gt;Show me the fade toggle!&lt;/a&gt;&lt;/p&gt;
+&lt;p id=&quot;<em>tg3</em>&quot; class=&quot;<em>tgContent</em>&quot;&gt;Fade toggle. &lt;a href=&quot;#&quot;&gt;#1&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;#2&lt;/a&gt; #3&lt;/p&gt;
+</pre>
+					<h3>JS</h3>
+<pre class="codeBlock">
+jQuery(function($){
+	// Toggle
+	var tgContent = $('.tgContent');
+	tgContent.hide();
+	$('.tgSimple').click(function(){
+		$($(this).attr('href')).toggle().find(':first').focus();
+		return false;
+	});
+	$('.tgSlide').click(function(){
+		$($(this).attr('href')).slideToggle(200).find(':first').focus();
+		return false;
+	});
+	$('.tgFade').click(function(){
+		$($(this).attr('href')).fadeToggle().find(':first').focus();
+		return false;
+	});
+	$(document).keydown(function(event){
+		if(event.keyCode != 27) return true; // ESC
+		var closeId = tgContent.filter(':visible').attr("id");
+		if(closeId) $('a').filter('[href="#'+closeId+'"]').focus();
+		tgContent.hide();
 	});
 });
 </pre>
