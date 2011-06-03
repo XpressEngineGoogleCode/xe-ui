@@ -31,7 +31,7 @@ img{border:0}
 .portlet .lined li:first-child{border:0}
 .portlet .add{position:absolute;top:0;right:1em;color:#666}
 .portlet .lined .add{top:.5em}
-.portlet .more{position:absolute;top:.5em;right:1em;text-decoration:none !important}
+.portlet .more{position:absolute;top:.5em;right:1em;text-decoration:none !important;color:#666}
 .portlet .more span{color:#999}
 /* Table */
 .table{margin:1em 0}

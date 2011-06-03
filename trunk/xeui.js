@@ -276,16 +276,15 @@ jQuery(function($){
 		return false;
 	});
 	function closeLayer() {
-		layer.fadeOut().removeClass('layerActive');
 		var closeId = layer.filter(':visible').attr("id");
 		if(closeId) layerAnchor.filter('[href="#'+closeId+'"]').focus();
+		layer.fadeOut().removeClass('layerActive');
 	}
 	$(document).keydown(function(event){
 		if(event.keyCode != 27) return true; // ESC
 		return closeLayer();
 	});
-	layer.click(function(){ return false });
-	$('html, .layerClose').click(closeLayer);
+	$('.layerClose').click(closeLayer);
 	$('.layerBlur').focusin(function(event){
 		layerClose.click();
 	});
@@ -325,6 +324,27 @@ jQuery(function($){
 	});
 	$('.modalBlur').focusin(function(event){
 		modalClose.click();
+	});
+	// Toggle
+	var tgContent = $('.tgContent');
+	tgContent.hide();
+	$('.tgSimple').click(function(){
+		$($(this).attr('href')).toggle().find(':first').focus();
+		return false;
+	});
+	$('.tgSlide').click(function(){
+		$($(this).attr('href')).slideToggle(200).find(':first').focus();
+		return false;
+	});
+	$('.tgFade').click(function(){
+		$($(this).attr('href')).fadeToggle().find(':first').focus();
+		return false;
+	});
+	$(document).keydown(function(event){
+		if(event.keyCode != 27) return true; // ESC
+		var closeId = tgContent.filter(':visible').attr("id");
+		if(closeId) $('a').filter('[href="#'+closeId+'"]').focus();
+		tgContent.hide();
 	});
 	// XEUI container & codeBlock Toggle
 	var container = $('.container');
