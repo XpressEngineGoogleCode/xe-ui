@@ -2128,20 +2128,21 @@ jQuery(function($){
 	var layerBlur = $('.layerBlur');
 	layerBlur.eq(0).clone().appendTo(layer);
 	layerAnchor.click(function(){
+		layer.fadeOut().removeClass('layerActive');
 		$($(this).attr('href')).fadeToggle().toggleClass('layerActive').find('&gt;.layerClose:first').focus();
 		return false;
 	});
+	function closeLayer() {
+		layer.fadeOut().removeClass('layerActive');
+		var closeId = layer.filter(':visible').attr(&quot;id&quot;);
+		if(closeId) layerAnchor.filter('[href=&quot;#'+closeId+'&quot;]').focus();
+		return false;
+	}
 	$(document).keydown(function(event){
-		if(event.keyCode != 27) return true;
-		layer.fadeOut().removeClass('layerActive');
-		layerAnchor.focus();
-		return false;
+		if(event.keyCode != 27) return true; // ESC
+		return closeLayer();
 	});
-	$('body, .layerClose').click(function(event){
-		layer.fadeOut().removeClass('layerActive');
-		layerAnchor.focus();
-		return false;
-	});
+	$('body, .layerClose').click(closeLayer);
 	$('.layerBlur').focusin(function(event){
 		layerClose.click();
 	});
@@ -2189,11 +2190,11 @@ jQuery(function($){
 	var htmlBody = $('html,body');
 	var modalAnchor = $('.modalAnchor');
 	var modal = $('.modal');
-	var modalBg = $('.modal&gt;.bg');
-	var modalFg = $('.modal&gt;.fg');
-	var modalCloseHtml = '&lt;button type=&quot;button&quot; class=&quot;<em>modalClose</em>&quot; title=&quot;Close this layer&quot;&gt;X&lt;/button&gt;';
-	var modalBlurHtml = '&lt;button type=&quot;button&quot; class=&quot;<em>modalBlur</em>&quot;&gt;&lt;/button&gt;';
-	modal.appendTo('body').hide().prepend('&lt;span class=&quot;<em>bg</em>&quot;&gt;&lt;/span&gt;');
+	var modalBg = modal.find('&gt;.bg');
+	var modalFg = modal.find('&gt;.fg');
+	var modalCloseHtml = '&lt;button type=&quot;button&quot; class=&quot;modalClose&quot; title=&quot;Close this layer&quot;&gt;X&lt;/button&gt;';
+	var modalBlurHtml = '&lt;button type=&quot;button&quot; class=&quot;modalBlur&quot;&gt;&lt;/button&gt;';
+	modal.appendTo('body').hide().prepend('&lt;span class=&quot;bg&quot;&gt;&lt;/span&gt;');
 	modalFg.prepend(modalCloseHtml);
 	var modalClose = $('.modalClose');
 	modalClose.eq(0).clone().appendTo(modalFg);
@@ -2207,7 +2208,7 @@ jQuery(function($){
 		return false;
 	});
 	$(document).keydown(function(event){
-		if(event.keyCode != 27) return true;
+		if(event.keyCode != 27) return true; // ESC
 		htmlBody.removeAttr('style');
 		modal.fadeOut().removeClass('modalActive');
 		modalAnchor.focus();
