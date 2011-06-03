@@ -285,6 +285,7 @@ jQuery(function($){
 		if(event.keyCode != 27) return true; // ESC
 		return closeLayer();
 	});
+	layer.click(function(){ return false });
 	$('body, .layerClose').click(closeLayer);
 	$('.layerBlur').focusin(function(event){
 		layerClose.click();
