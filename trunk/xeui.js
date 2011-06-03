@@ -285,7 +285,7 @@ jQuery(function($){
 		return closeLayer();
 	});
 	layer.click(function(){ return false });
-	$('body, .layerClose').click(closeLayer);
+	$('html, .layerClose').click(closeLayer);
 	$('.layerBlur').focusin(function(event){
 		layerClose.click();
 	});
