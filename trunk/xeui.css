@@ -29,8 +29,8 @@ img{border:0}
 .portlet .lined{margin:1px;padding:0;list-style:none}
 .portlet .lined li{padding:.5em 1em;border-top:1px solid #eee}
 .portlet .lined li:first-child{border:0}
-.portlet .add{position:absolute;top:0;right:1em;color:#666}
-.portlet .lined .add{top:.5em}
+.portlet .add{position:absolute;top:0;right:0;color:#666;background:#fff;padding:0 1em}
+.portlet .lined .add{top:0;background:#fff;padding:.5em 1em}
 .portlet .more{position:absolute;top:.5em;right:1em;text-decoration:none !important;color:#666}
 .portlet .more span{color:#999}
 /* Table */
