@@ -271,14 +271,13 @@ jQuery(function($){
 	var layerBlur = $('.layerBlur');
 	layerBlur.eq(0).clone().appendTo(layer);
 	layerAnchor.click(function(){
-		layer.fadeOut().removeClass('layerActive');
-		$($(this).attr('href')).fadeToggle().toggleClass('layerActive').find('>.layerClose:first').focus();
+		$($(this).attr('href')).fadeToggle().find('>.layerClose:first').focus();
 		return false;
 	});
 	function closeLayer() {
 		var closeId = layer.filter(':visible').attr("id");
 		if(closeId) layerAnchor.filter('[href="#'+closeId+'"]').focus();
-		layer.fadeOut().removeClass('layerActive');
+		layer.fadeOut();
 	}
 	$(document).keydown(function(event){
 		if(event.keyCode != 27) return true; // ESC
