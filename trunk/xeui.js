@@ -260,7 +260,7 @@ jQuery(function($){
 		}
 	});
 	// Layer
-	var layerAnchor = $('.layerAnchor');
+	var layerAnchor = $('.layerAnchor[href^=#]');
 	var layer = $('.layer');
 	var layerCloseHtml = '<button type="button" class="layerClose" title="Close this layer">X</button>';
 	var layerBlurHtml = '<button type="button" class="layerBlur"></button>';
