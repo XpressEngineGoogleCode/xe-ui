@@ -2137,13 +2137,13 @@ jQuery(function($){
 	var layerBlur = $('.layerBlur');
 	layerBlur.eq(0).clone().appendTo(layer);
 	layerAnchor.click(function(){
-		layer.fadeOut().removeClass('layerActive');
-		$($(this).attr('href')).fadeToggle().toggleClass('layerActive').find('&gt;.layerClose:first').focus();
+		$($(this).attr('href')).fadeToggle().find('&gt;.layerClose:first').focus();
+		return false;
 	});
 	function closeLayer() {
 		var closeId = layer.filter(':visible').attr(&quot;id&quot;);
 		if(closeId) layerAnchor.filter('[href=&quot;#'+closeId+'&quot;]').focus();
-		layer.fadeOut().removeClass('layerActive');
+		layer.fadeOut();
 		return false;
 	}
 	$(document).keydown(function(event){
