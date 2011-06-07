@@ -261,7 +261,7 @@ img{border:0}
 					<h3>Global Navigation Bar</h3>
 					<div class="gnb">
 						<ul>
-							<li><a href="#"><span>Menu 1</span></a>
+							<li class="activeOn"><a href="#"><span>Menu 1</span></a>
 								<ul>
 									<li><a href="#">Menu 1-1</a></li>
 									<li><a href="#">Menu 1-2</a></li>
@@ -288,7 +288,7 @@ img{border:0}
 <pre class="codeBlock">
 &lt;div class=&quot;<em>gnb jx</em>&quot;&gt;
 	&lt;ul&gt;
-		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;Menu 1&lt;/span&gt;&lt;/a&gt;
+		&lt;li class=&quot;<em>activeOn</em>&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;Menu 1&lt;/span&gt;&lt;/a&gt;
 			&lt;ul&gt;
 				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu 1-1&lt;/a&gt;&lt;/li&gt;
 				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu 1-2&lt;/a&gt;&lt;/li&gt;
@@ -326,7 +326,8 @@ img{border:0}
 .gnb li a:hover,
 .gnb li a:active,
 .gnb li a:focus,
-.gnb li.active a{background:#fff;border:1px solid #ddd;padding:7px 17px}
+.gnb li.active a,
+.gnb li.activeOn a{background:#fff;border:1px solid #ddd;padding:7px 17px}
 .gnb li li a{color:#555;padding:5px 15px !important;font-weight:normal !important;border:0 !important}
 .gnb li li a:hover,
 .gnb li li a:active,

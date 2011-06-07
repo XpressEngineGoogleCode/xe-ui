@@ -80,7 +80,8 @@ img{border:0}
 .gnb li a:hover,
 .gnb li a:active,
 .gnb li a:focus,
-.gnb li.active a{background:#fff;border:1px solid #ddd;padding:7px 17px}
+.gnb li.active a,
+.gnb li.activeOn a{background:#fff;border:1px solid #ddd;padding:7px 17px}
 .gnb li li a{color:#555;padding:5px 15px !important;font-weight:normal !important;border:0 !important}
 .gnb li li a:hover,
 .gnb li li a:active,
