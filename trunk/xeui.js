@@ -332,18 +332,32 @@ jQuery(function($){
 		return false;
 	});
 	$('.tgSlide').click(function(){
-		$($(this).attr('href')).slideToggle(200).find(':first').focus();
+		$($(this).attr('href')).slideToggle(100).find(':first').focus();
 		return false;
 	});
 	$('.tgFade').click(function(){
-		$($(this).attr('href')).fadeToggle().find(':first').focus();
+		$($(this).attr('href')).fadeToggle(100).find(':first').focus();
 		return false;
 	});
 	$(document).keydown(function(event){
 		if(event.keyCode != 27) return true; // ESC
-		var closeId = tgContent.filter(':visible').attr("id");
+		var closeId = tgContent.filter(':visible').attr('id');
 		if(closeId) $('a').filter('[href="#'+closeId+'"]').focus();
 		tgContent.hide();
+	});
+	// Action
+	var action = $('.portlet>ul>li>.action');
+	var action_parent_li = action.parent('li');
+	action.hide().css({'position':'absolute'});
+	action_parent_li.find('*').focusin(function(){
+		action.hide();
+		$(this).parent('li').find(action).show();
+	});
+	action_parent_li.mouseover(function(){
+		$(this).find(action).fadeIn(100);
+	});
+	action_parent_li.mouseleave(function(){
+		$(this).find(action).fadeOut(100);
 	});
 	// XEUI container & codeBlock Toggle
 	var container = $('.container');
