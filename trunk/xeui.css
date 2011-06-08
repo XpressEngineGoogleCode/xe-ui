@@ -14,6 +14,7 @@ img{border:0}
 .itemToggle:hover,
 .itemToggle:active,
 .itemToggle:focus{opacity:.25}
+.item:target .container,
 .work .container,.work .codeBlock{display:block !important}
 /* Section & Heading */
 .section{margin:1em 0}
