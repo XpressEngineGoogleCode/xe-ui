@@ -1719,6 +1719,28 @@ jQuery(function($){
 .portlet .lined .add{padding:.5em 1em}
 .portlet .more{position:absolute;top:.5em;right:1em;text-decoration:none !important;color:#666}
 .portlet .more span{color:#999}
+.portlet .action{text-align:right;top:0;right:0;padding:.5em 1em .5em 3em;background:-webkit-gradient(linear, 0% 0%, 100% 0%, from(rgba(255,255,255,0)), to(rgba(255,255,255,1)), color-stop(15%, #fff));background:-moz-linear-gradient(left, rgba(255,255,255,0) 0, rgba(255,255,255,1) 15%)}
+.portlet .action a,
+.portlet .action button{margin-left:1em}
+</pre>
+					<h3>JS</h3>
+<pre class="codeBlock">
+jQuery(function($){
+	// Action
+	var action = $('.portlet>ul>li>.action');
+	var action_parent_li = action.parent('li');
+	action.hide().css({'position':'absolute'});
+	action_parent_li.find('*').focusin(function(){
+		action.hide();
+		$(this).parent('li').find(action).show();
+	});
+	action_parent_li.mouseover(function(){
+		$(this).find(action).fadeIn(100);
+	});
+	action_parent_li.mouseleave(function(){
+		$(this).find(action).fadeOut(100);
+	});
+});
 </pre>
 					<h3>Heading + Paragraph</h3>
 					<div class="portlet">
@@ -1773,12 +1795,12 @@ jQuery(function($){
 	&lt;a href=&quot;#&quot; class=&quot;<em>more</em>&quot;&gt;&lt;span&gt;&rsaquo;&lt;/span&gt; MORE&lt;/a&gt;
 &lt;/div&gt;
 </pre>
-					<h3>Heading + Lined Item</h3>
+					<h3>Heading + Lined Item + Action Item</h3>
 					<div class="portlet">
 						<h2>Heading</h2>
 						<ul class="lined">
-							<li>First Item <span class="add">2012-12-24</span></li>
-							<li><a href="#">Second Item</a> <span class="add">2012-12-24</span></li>
+							<li>First Item <span class="add">2012-12-24</span> <span class="action"><a href="#">Edit</a> <a href="#">Spam</a> <a href="#">Trash</a></span></li>
+							<li><a href="#">Second Item</a> <span class="add">2012-12-24</span> <span class="action"><a href="#">Edit</a> <a href="#">Spam</a> <a href="#">Trash</a></span></li>
 						</ul>
 						<a href="#" class="more"><span>&rsaquo;</span> MORE</a>
 					</div>
@@ -1786,8 +1808,8 @@ jQuery(function($){
 &lt;div class=&quot;<em>portlet</em>&quot;&gt;
 	&lt;h2&gt;Heading&lt;/h2&gt;
 	&lt;ul class=&quot;<em>lined</em>&quot;&gt;
-		&lt;li&gt;First Item &lt;span class=&quot;<em>add</em>&quot;&gt;2012-12-24&lt;/span&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Second Item&lt;/a&gt; &lt;span class=&quot;<em>add</em>&quot;&gt;2012-12-24&lt;/span&gt;&lt;/li&gt;
+		&lt;li&gt;First Item &lt;span class=&quot;<em>add</em>&quot;&gt;2012-12-24&lt;/span&gt; &lt;span class=&quot;<em>action</em>&quot;&gt;&lt;a href=&quot;#&quot;&gt;Edit&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;Spam&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;Trash&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Second Item&lt;/a&gt; &lt;span class=&quot;<em>add</em>&quot;&gt;2012-12-24&lt;/span&gt; &lt;span class=&quot;<em>action</em>&quot;&gt;&lt;a href=&quot;#&quot;&gt;Edit&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;Spam&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;Trash&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
 	&lt;/ul&gt;
 	&lt;a href=&quot;#&quot; class=&quot;<em>more</em>&quot;&gt;&lt;span&gt;&rsaquo;&lt;/span&gt; MORE&lt;/a&gt;
 &lt;/div&gt;
@@ -2267,11 +2289,11 @@ jQuery(function($){
 		return false;
 	});
 	$('.tgSlide').click(function(){
-		$($(this).attr('href')).slideToggle(200).find(':first').focus();
+		$($(this).attr('href')).slideToggle(100).find(':first').focus();
 		return false;
 	});
 	$('.tgFade').click(function(){
-		$($(this).attr('href')).fadeToggle().find(':first').focus();
+		$($(this).attr('href')).fadeToggle(100).find(':first').focus();
 		return false;
 	});
 	$(document).keydown(function(event){
