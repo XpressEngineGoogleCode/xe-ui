@@ -346,18 +346,20 @@ jQuery(function($){
 		tgContent.hide();
 	});
 	// Action
-	var action = $('.portlet>ul>li>.action');
-	var action_parent_li = action.parent('li');
+	var action = $('.portlet .action');
+	var action_li = action.parent('li');
 	action.hide().css({'position':'absolute'});
-	action_parent_li.find('*').focusin(function(){
-		action.hide();
-		$(this).parent('li').find(action).show();
+	action_li.mouseover(function(){
+		$(this).find('>.action').fadeIn(100);
+		return false;
 	});
-	action_parent_li.mouseover(function(){
-		$(this).find(action).fadeIn(100);
+	action_li.mouseleave(function(){
+		$(this).find('>.action').fadeOut(100);
+		return false;
 	});
-	action_parent_li.mouseleave(function(){
-		$(this).find(action).fadeOut(100);
+	action_li.find('*:first').focusin(function(){
+		action_li.mouseout();
+		$(this).parent('li').mouseover();
 	});
 	// XEUI container & codeBlock Toggle
 	var container = $('.container');
