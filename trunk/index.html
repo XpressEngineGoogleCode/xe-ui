@@ -1042,7 +1042,7 @@ jQuery(function($){
 .pagination a:hover,
 .pagination a:active,
 .pagination a:focus{background-color:#f8f8f8;}
-.pagination strong{color:#ff6600;font-size:20px}
+.pagination strong{color:#e00;font-size:20px}
 .pagination .direction{font-weight:normal;white-space:nowrap}
 .pagination .direction span{font-weight:bold;font-size:14px}
 .pagination .direction:hover,
@@ -1062,7 +1062,9 @@ jQuery(function($){
 .table{margin:1em 0}
 .table table{width:100%;border:0;border-collapse:collapse;border-top:2px solid #ccc}
 .table caption{padding:8px 0;font-weight:bold;text-align:left}
-.table caption em{float:right;font-style:normal;font-weight:normal;color:#f60}
+.table caption em{float:right;font-style:normal;font-weight:normal;color:#e00;margin-left:1em}
+.table caption strong{color:#e00}
+.table caption .side{float:right;font-weight:normal;margin-left:1em}
 .table th,.table td{border:0;padding:8px;vertical-align:top;text-align:left;border-bottom:1px solid #ddd}
 .table th{background:#f8f8f8}
 .table thead th{border-bottom:1px solid #999}
@@ -1079,7 +1081,7 @@ jQuery(function($){
 					<h3>Preview</h3>
 					<div class="table">
 						<table width="100%" border="1" cellspacing="0">
-							<caption>Top &amp; Left header. <em>This is a caption text.</em></caption>
+							<caption>Top &amp; Left header. <em>This is a caption text.</em> <span class="side">Sort by <a href="#">Date</a> | <a href="#">Name</a></span></caption>
 							<thead>
 								<tr>
 									<th scope="col">th</th>
@@ -1106,7 +1108,7 @@ jQuery(function($){
 <pre class="codeBlock">
 &lt;div class="<em>table</em>">
 	&lt;table width=&quot;100%&quot; border=&quot;1&quot; cellspacing=&quot;0&quot;&gt;
-		&lt;caption&gt;caption &lt;em&gt;em&lt;/em&gt;&lt;/caption&gt;
+		&lt;caption&gt;caption &lt;em&gt;em&lt;/em&gt; &lt;span class=&quot;<em>side</em>&quot;&gt;Sort by &lt;a href=&quot;#&quot;&gt;Date&lt;/a&gt; | &lt;a href=&quot;#&quot;&gt;Name&lt;/a&gt;&lt;/span&gt;&lt;/caption&gt;
 		&lt;thead&gt;
 			&lt;tr&gt;
 				&lt;th scope=&quot;col&quot;&gt;th&lt;/th&gt;
@@ -1133,7 +1135,7 @@ jQuery(function($){
 </pre>
 					<div class="table">
 						<table width="100%" border="1" cellspacing="0">
-							<caption>Top header. <em>This is a caption text.</em></caption>
+							<caption>Top header. <em>This is a caption text.</em> <span class="side">Sort by <a href="#">Date</a> | <a href="#">Name</a></span></caption>
 							<thead>
 								<tr>
 									<th scope="col">th</th>
@@ -1160,7 +1162,7 @@ jQuery(function($){
 <pre class="codeBlock">
 &lt;div class=&quot;<em>table</em>&quot;&gt;
 	&lt;table width=&quot;100%&quot; border=&quot;1&quot; cellspacing=&quot;0&quot;&gt;
-		&lt;caption&gt;caption &lt;em&gt;em&lt;/em&gt;&lt;/caption&gt;
+		&lt;caption&gt;caption &lt;em&gt;em&lt;/em&gt; &lt;span class=&quot;<em>side</em>&quot;&gt;Sort by &lt;a href=&quot;#&quot;&gt;Date&lt;/a&gt; | &lt;a href=&quot;#&quot;&gt;Name&lt;/a&gt;&lt;/span&gt;&lt;/caption&gt;
 		&lt;thead&gt;
 			&lt;tr&gt;
 				&lt;th scope=&quot;col&quot;&gt;th&lt;/th&gt;
@@ -1187,7 +1189,7 @@ jQuery(function($){
 </pre>
 					<div class="table">
 						<table width="100%" border="1" cellspacing="0">
-							<caption>Left header. <em>This is a caption text.</em></caption>
+							<caption>Left header. <em>This is a caption text.</em> <span class="side">Sort by <a href="#">Date</a> | <a href="#">Name</a></span></caption>
 							<tfoot>
 								<tr>
 									<th scope="row">th</th>
@@ -1207,7 +1209,7 @@ jQuery(function($){
 <pre class="codeBlock">
 &lt;div class=&quot;<em>table</em>&quot;&gt;
 	&lt;table width=&quot;100%&quot; border=&quot;1&quot; cellspacing=&quot;0&quot;&gt;
-		&lt;caption&gt;caption &lt;em&gt;em&lt;/em&gt;&lt;/caption&gt;
+		&lt;caption&gt;caption &lt;em&gt;em&lt;/em&gt; &lt;span class=&quot;<em>side</em>&quot;&gt;Sort by &lt;a href=&quot;#&quot;&gt;Date&lt;/a&gt; | &lt;a href=&quot;#&quot;&gt;Name&lt;/a&gt;&lt;/span&gt;&lt;/caption&gt;
 		&lt;tfoot&gt;
 			&lt;tr&gt;
 				&lt;th scope=&quot;row&quot;&gt;th&lt;/th&gt;
@@ -1237,7 +1239,7 @@ jQuery(function($){
 .form{margin:0;padding:0}
 .form,.form label,.form input,.form textarea,.form select,.form button{font-size:12px}
 .form fieldset{margin:0 0 2em 0;padding:0;border:0}
-.form em{font-style:normal;color:#f60}
+.form em{font-style:normal;color:#e00}
 .form label{margin:0 10px 0 0}
 .form input[type=checkbox]+label,.form input[type=radio]+label,.form input[type=file]{cursor:pointer}
 .form ul{position:relative;overflow:hidden;margin:0;padding:0;list-style:none;border-top:2px solid #999;border-bottom:1px solid #ccc;*zoom:1}
