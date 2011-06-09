@@ -1732,17 +1732,17 @@ jQuery(function($){
 	var action = $('.portlet .action');
 	var action_li = action.parent('li');
 	action.hide().css({'position':'absolute'});
-	action_li.mouseover(function(){
+	action_li.mouseleave(function(){
+		action.fadeOut(100);
+		return false;
+	});
+	action_li.mouseenter(function(){
+		action_li.mouseleave();
 		$(this).find('&gt;.action').fadeIn(100);
 		return false;
 	});
-	action_li.mouseleave(function(){
-		$(this).find('&gt;.action').fadeOut(100);
-		return false;
-	});
-	action_li.find('*:first').focusin(function(){
-		action_li.mouseout();
-		$(this).parent('li').mouseover();
+	action_li.find('*:first-child').focusin(function(){
+		$(this).parent('li').mouseenter();
 	});
 });
 </pre>
