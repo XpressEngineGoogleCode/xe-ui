@@ -7,7 +7,7 @@ button,input[type=submit],input[type=reset],input[type=button]{cursor:pointer;ov
 img{border:0}
 /* XEUI Content */
 .codeBlock{font-family:"Lucida Console", Monaco, monospace;background:#333;color:#fff;padding:1em;overflow:auto}
-.codeBlock em{font-style:normal;color:#f60}
+.codeBlock em{font-style:normal;color:#e00}
 .item{position:relative;overflow:hidden;zoom:1}
 .item>h2{color:#690}
 .itemToggle{position:absolute;right:0;top:0;width:100%;*width:auto;height:60px;overflow:visible;padding:0;text-align:right;background:#fff;opacity:0;border:0;zoom:1;cursor:pointer}
@@ -41,7 +41,9 @@ img{border:0}
 .table{margin:1em 0}
 .table table{width:100%;border:0;border-collapse:collapse;border-top:2px solid #ccc}
 .table caption{padding:8px 0;font-weight:bold;text-align:left}
-.table caption em{float:right;font-style:normal;font-weight:normal;color:#f60}
+.table caption em{float:right;font-style:normal;font-weight:normal;color:#e00;margin-left:1em}
+.table caption strong{color:#e00}
+.table caption .side{float:right;font-weight:normal;margin-left:1em}
 .table th,.table td{border:0;padding:8px;vertical-align:top;text-align:left;border-bottom:1px solid #ddd}
 .table th{background:#f8f8f8}
 .table thead th{border-bottom:1px solid #999}
@@ -57,7 +59,7 @@ img{border:0}
 /* Form */
 .form{margin:1em 0;padding:0}
 .form fieldset{margin:0 0 2em 0;padding:0;border:0}
-.form em{font-style:normal;color:#f60}
+.form em{font-style:normal;color:#e00}
 .form label{margin:0 10px 0 0;line-height:1}
 .form input[type=checkbox]+label,.form input[type=radio]+label,.form input[type=file]{cursor:pointer}
 .form ul{position:relative;overflow:hidden;margin:0;padding:0;list-style:none;border-top:2px solid #999;border-bottom:1px solid #ccc;zoom:1}
@@ -217,7 +219,7 @@ img{border:0}
 .pagination a:hover,
 .pagination a:active,
 .pagination a:focus{border:1px solid #ddd;margin:0 -1px}
-.pagination strong{color:#ff6600;font-size:20px}
+.pagination strong{color:#e00;font-size:20px}
 .pagination .direction{font-weight:normal;white-space:nowrap}
 .pagination .direction span{font-weight:bold;font-size:14px}
 .pagination .direction:hover,
