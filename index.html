@@ -2261,7 +2261,7 @@ jQuery(function($){
 		if(event.keyCode != 27) return true; // ESC
 		return closeModal();
 	});
-	$('.modal&gt;.bg, .modalClose').click(closeModal);
+	$('.modal&gt;.bg, .modalClose, .modal .cancel').click(closeModal);
 	$('.modalBlur').focusin(function(event){
 		modalClose.click();
 	});
