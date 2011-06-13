@@ -271,13 +271,13 @@ jQuery(function($){
 	var layerBlur = $('.layerBlur');
 	layerBlur.eq(0).clone().appendTo(layer);
 	layerAnchor.click(function(){
-		$($(this).attr('href')).fadeToggle().find('>.layerClose:first').focus();
+		$($(this).attr('href')).fadeToggle(200).find('>.layerClose:first').focus();
 		return false;
 	});
 	function closeLayer() {
 		var closeId = layer.filter(':visible').attr("id");
 		if(closeId) layerAnchor.filter('[href="#'+closeId+'"]').focus();
-		layer.fadeOut();
+		layer.fadeOut(200);
 	}
 	$(document).keydown(function(event){
 		if(event.keyCode != 27) return true; // ESC
@@ -306,21 +306,20 @@ jQuery(function($){
 		htmlBody.css({'width':'100%','height':'100%'});
 		modal.fadeToggle(200).toggleClass('modalActive');
 		modalFg.find('>.modalClose:first').focus();
+		$(this).addClass('active');
 		return false;
 	});
+	function closeModal() {
+		htmlBody.removeAttr('style');
+		modal.fadeOut(200).removeClass('modalActive');
+		$('.modalAnchor.active').focus().removeClass('active');
+		return false;
+	}
 	$(document).keydown(function(event){
 		if(event.keyCode != 27) return true; // ESC
-		htmlBody.removeAttr('style');
-		modal.fadeOut().removeClass('modalActive');
-		modalAnchor.focus();
-		return false;
+		return closeModal();
 	});
-	$('.modal>.bg, .modalClose').click(function(event){
-		htmlBody.removeAttr('style');
-		modal.fadeOut().removeClass('modalActive');
-		modalAnchor.focus();
-		return false;
-	});
+	$('.modal>.bg, .modalClose').click(closeModal);
 	$('.modalBlur').focusin(function(event){
 		modalClose.click();
 	});
