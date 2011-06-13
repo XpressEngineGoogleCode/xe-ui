@@ -304,7 +304,7 @@ jQuery(function($){
 	modalBlur.eq(0).clone().appendTo(modalFg);
 	modalAnchor.click(function(){
 		htmlBody.css({'width':'100%','height':'100%'});
-		modal.fadeToggle().toggleClass('modalActive');
+		modal.fadeToggle(200).toggleClass('modalActive');
 		modalFg.find('>.modalClose:first').focus();
 		return false;
 	});
