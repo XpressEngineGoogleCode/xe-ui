@@ -317,7 +317,7 @@ jQuery(function($){
 	}
 	$(document).keydown(function(event){
 		if(event.keyCode != 27) return true; // ESC
-		return closeModal();
+		if(modal.find('.tgContent:visible').length == 0) return closeModal();
 	});
 	$('.modal>.bg, .modalClose, .modal .cancel').click(closeModal);
 	$('.modalBlur').focusin(function(event){
