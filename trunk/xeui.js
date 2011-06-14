@@ -325,25 +325,33 @@ jQuery(function($){
 	});
 	// Toggle
 	var tgContent = $('.tgContent');
-	tgContent.hide();
+	var tgBlurHtml = '<button type="button" class="tgBlur"></button>';
+	tgContent.hide().prepend(tgBlurHtml);
+	var tgBlur = $('.tgBlur');
+	tgBlur.eq(0).clone().appendTo(tgContent);
 	$('.tgSimple').click(function(){
-		$($(this).attr('href')).toggle().find(':first').focus();
+		$($(this).attr('href')).toggle().find('a, input, select, textarea').eq(0).focus();
 		return false;
 	});
 	$('.tgSlide').click(function(){
-		$($(this).attr('href')).slideToggle(100).find(':first').focus();
+		$($(this).attr('href')).slideToggle(100).find('a, input, select, textarea').eq(0).focus();
 		return false;
 	});
 	$('.tgFade').click(function(){
-		$($(this).attr('href')).fadeToggle(100).find(':first').focus();
+		$($(this).attr('href')).fadeToggle(100).find('a, input, select, textarea').eq(0).focus();
 		return false;
 	});
+	function closeTg() {
+		var closeId = tgContent.filter(':visible').attr('id');
+		if(closeId) $('.tgSimple, .tgSlide, .tgFade').filter('[href="#'+closeId+'"]').focus();
+		tgContent.prev('input').focus();
+		tgContent.fadeOut(200);
+	}
 	$(document).keydown(function(event){
 		if(event.keyCode != 27) return true; // ESC
-		var closeId = tgContent.filter(':visible').attr('id');
-		if(closeId) $('a').filter('[href="#'+closeId+'"]').focus();
-		tgContent.hide();
+		return closeTg();
 	});
+	$('.tgBlur').focusin(closeTg);
 	// Action
 	var action = $('.portlet .action');
 	var action_li = action.parent('li');

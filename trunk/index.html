@@ -2290,30 +2290,43 @@ jQuery(function($){
 &lt;p&gt;&lt;a href=&quot;<em>#tg3</em>&quot; class=&quot;<em>tgFade</em>&quot;&gt;Show me the fade toggle!&lt;/a&gt;&lt;/p&gt;
 &lt;p id=&quot;<em>tg3</em>&quot; class=&quot;<em>tgContent</em>&quot;&gt;Fade toggle. &lt;a href=&quot;#&quot;&gt;#1&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;#2&lt;/a&gt; #3&lt;/p&gt;
 </pre>
+					<h3>CSS</h3>
+<pre class="codeBlock">
+/* Toggle Content */
+.tgBlur{position:absolute;top:0;right:0;border:0;background:none;padding:0;width:1px;height:1px;overflow:hidden}
+</pre>
 					<h3>JS</h3>
 <pre class="codeBlock">
 jQuery(function($){
 	// Toggle
 	var tgContent = $('.tgContent');
-	tgContent.hide();
+	var tgBlurHtml = '&lt;button type=&quot;button&quot; class=&quot;tgBlur&quot;&gt;&lt;/button&gt;';
+	tgContent.hide().prepend(tgBlurHtml);
+	var tgBlur = $('.tgBlur');
+	tgBlur.eq(0).clone().appendTo(tgContent);
 	$('.tgSimple').click(function(){
-		$($(this).attr('href')).toggle().find(':first').focus();
+		$($(this).attr('href')).toggle().find('a, input, select, textarea').eq(0).focus();
 		return false;
 	});
 	$('.tgSlide').click(function(){
-		$($(this).attr('href')).slideToggle(100).find(':first').focus();
+		$($(this).attr('href')).slideToggle(100).find('a, input, select, textarea').eq(0).focus();
 		return false;
 	});
 	$('.tgFade').click(function(){
-		$($(this).attr('href')).fadeToggle(100).find(':first').focus();
+		$($(this).attr('href')).fadeToggle(100).find('a, input, select, textarea').eq(0).focus();
 		return false;
 	});
+	function closeTg() {
+		var closeId = tgContent.filter(':visible').attr('id');
+		if(closeId) $('.tgSimple, .tgSlide, .tgFade').filter('[href=&quot;#'+closeId+'&quot;]').focus();
+		tgContent.prev('input').focus();
+		tgContent.fadeOut(200);
+	}
 	$(document).keydown(function(event){
 		if(event.keyCode != 27) return true; // ESC
-		var closeId = tgContent.filter(':visible').attr("id");
-		if(closeId) $('a').filter('[href="#'+closeId+'"]').focus();
-		tgContent.hide();
+		return closeTg();
 	});
+	$('.tgBlur').focusin(closeTg);
 });
 </pre>
 				</div>
