@@ -302,3 +302,5 @@ img{border:0}
 .modalActive{position:fixed;_position:absolute;top:0;left:0;width:100%;height:100%;z-index:100}
 .modalClose{position:absolute;right:-10px;top:-10px;border:0;background:#ddd;padding:0;width:34px;height:34px;font-size:16px;font-weight:bold;cursor:pointer;color:#999}
 .modalBlur{position:absolute;top:0;right:0;border:0;background:none;padding:0;width:1px;height:1px;overflow:hidden}
+/* Toggle Content */
+.tgBlur{position:absolute;top:0;right:0;border:0;background:none;padding:0;width:1px;height:1px;overflow:hidden}
