@@ -32,13 +32,16 @@ jQuery(function($){
 		$(this).filter(':checked').next('label').css('fontWeight','bold');
 	});
 	// Check All
-	$('.form th>:checkbox').change(function(){
+	var formThCheck = $('.form th>:checkbox');
+	formThCheck.change(function(){
+		var formTdCheck = $(this).parents('table').find('td>:checkbox');
 		if($(this).is(':checked')){
-			$('.form td>:checkbox').attr('checked','checked');
+			formTdCheck.attr('checked','checked');
 		} else {
-			$('.form td>:checkbox').removeAttr('checked');
+			formTdCheck.removeAttr('checked');
 		}
 	});
+	formThCheck.change();
 	// Global Navigation Bar
 	var gnb = $('div.gnb');
 	var gnb_i = gnb.find('>ul>li');
