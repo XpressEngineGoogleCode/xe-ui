@@ -1305,6 +1305,14 @@ jQuery(function($){
 		inputRC.filter('[name='+myName+']').not(':checked').next('label').css('fontWeight','normal');
 		$(this).filter(':checked').next('label').css('fontWeight','bold');
 	});
+	// Check All
+	$('.form th>:checkbox').change(function(){
+		if($(this).is(':checked')){
+			$('.form td>:checkbox').attr('checked','checked');
+		} else {
+			$('.form td>:checkbox').removeAttr('checked');
+		}
+	});
 });
 </pre>
 					<h3>input type=&quot;text&quot; + label basic</h3>
@@ -1671,6 +1679,57 @@ jQuery(function($){
 				&lt;textarea rows=&quot;5&quot; cols=&quot;50&quot; id=&quot;signature&quot; style=&quot;width:600px&quot;&gt;&lt;/textarea&gt;
 			&lt;/li&gt;
 		&lt;/ul&gt;
+	&lt;/fieldset&gt;
+&lt;/form&gt;
+</pre>
+					<h3>table + checkbox : check all</h3>
+					<form action="#" method="post" class="form">
+						<fieldset>
+							<div class="table">
+								<table width="100%" border="1" cellspacing="0">
+									<thead>
+										<tr>
+											<th scope="col">Title</th>
+											<th scope="col"><input type="checkbox" title="Check All" /></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>The quick brown fox jumps over the lazy dog.</td>
+											<td><input type="checkbox" /></td>
+										</tr>
+										<tr>
+											<td>The quick brown fox jumps over the lazy dog.</td>
+											<td><input type="checkbox" /></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</fieldset>
+					</form>
+<pre class="codeBlock">
+&lt;form action=&quot;#&quot; method=&quot;post&quot; class=&quot;<em>form</em>&quot;&gt;
+	&lt;fieldset&gt;
+		&lt;div class=&quot;table&quot;&gt;
+			&lt;table width=&quot;100%&quot; border=&quot;1&quot; cellspacing=&quot;0&quot;&gt;
+				&lt;thead&gt;
+					&lt;tr&gt;
+						&lt;th scope=&quot;col&quot;&gt;Title&lt;/th&gt;
+						&lt;th scope=&quot;col&quot;&gt;&lt;input type=&quot;checkbox&quot; title=&quot;Check All&quot; /&gt;&lt;/th&gt;
+					&lt;/tr&gt;
+				&lt;/thead&gt;
+				&lt;tbody&gt;
+					&lt;tr&gt;
+						&lt;td&gt;The quick brown fox jumps over the lazy dog.&lt;/td&gt;
+						&lt;td&gt;&lt;input type=&quot;checkbox&quot; /&gt;&lt;/td&gt;
+					&lt;/tr&gt;
+					&lt;tr&gt;
+						&lt;td&gt;The quick brown fox jumps over the lazy dog.&lt;/td&gt;
+						&lt;td&gt;&lt;input type=&quot;checkbox&quot; /&gt;&lt;/td&gt;
+					&lt;/tr&gt;
+				&lt;/tbody&gt;
+			&lt;/table&gt;
+		&lt;/div&gt;
 	&lt;/fieldset&gt;
 &lt;/form&gt;
 </pre>
