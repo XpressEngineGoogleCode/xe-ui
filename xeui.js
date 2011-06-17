@@ -23,6 +23,14 @@ jQuery(function($){
 			}
 		})
 		.blur();
+	// Checked
+	var inputRC = $('input[type=radio], input[type=checkbox]');
+	$('input:checked').next('label').css('fontWeight','bold');
+	inputRC.change(function(){
+		var myName = $(this).attr('name');
+		inputRC.filter('[name='+myName+']').not(':checked').next('label').css('fontWeight','normal');
+		$(this).filter(':checked').next('label').css('fontWeight','bold');
+	});
 	// Global Navigation Bar
 	var gnb = $('div.gnb');
 	var gnb_i = gnb.find('>ul>li');
