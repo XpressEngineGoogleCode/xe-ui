@@ -357,7 +357,7 @@ jQuery(function($){
 		return false;
 	});
 	$('.tgFade').click(function(){
-		$($(this).attr('href')).fadeToggle(100).find('a, input, select, textarea').eq(0).focus();
+		$($(this).attr('href')).fadeToggle(200).find('a, input, select, textarea').eq(0).focus();
 		return false;
 	});
 	function closeTg() {
