@@ -31,6 +31,14 @@ jQuery(function($){
 		inputRC.filter('[name='+myName+']').not(':checked').next('label').css('fontWeight','normal');
 		$(this).filter(':checked').next('label').css('fontWeight','bold');
 	});
+	// Check All
+	$('.form th>:checkbox').change(function(){
+		if($(this).is(':checked')){
+			$('.form td>:checkbox').attr('checked','checked');
+		} else {
+			$('.form td>:checkbox').removeAttr('checked');
+		}
+	});
 	// Global Navigation Bar
 	var gnb = $('div.gnb');
 	var gnb_i = gnb.find('>ul>li');
