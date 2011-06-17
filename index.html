@@ -1000,54 +1000,66 @@ jQuery(function($){
 					<h3>Pagination</h3>
 					<h3>XHTML</h3>
 					<div class="pagination">
-						<a href="#" class="direction"><span>&laquo;</span> PREV END</a>
-						<a href="#" class="direction"><span>&lsaquo;</span> PREV</a>
-						<a href="#">11</a>
-						<strong>12</strong>
+						<a href="#" class="direction">&laquo; PREV END</a>
+						<a href="#" class="direction">&lsaquo; PREV</a>
+						<strong>11</strong>
+						<a href="#">12</a>
 						<a href="#">13</a>
 						<a href="#">14</a>
 						<a href="#">15</a>
-						<a href="#">16</a>
-						<a href="#">17</a>
-						<a href="#">18</a>
-						<a href="#">19</a>
-						<a href="#">20</a>
-						<a href="#" class="direction">NEXT <span>&rsaquo;</span></a>
-						<a href="#" class="direction">NEXT END <span>&raquo;</span></a>
+						<a href="#" class="direction">NEXT &rsaquo;</a>
+						<a href="#" class="direction">NEXT END &raquo;</a>
 					</div>
+					<form action="" class="pagination">
+						<a href="#" class="direction">&laquo; PREV END</a>
+						<a href="#" class="direction">&lsaquo; PREV</a>
+						<input value="11" />
+						<a href="#">12</a>
+						<a href="#">13</a>
+						<a href="#">14</a>
+						<a href="#">15</a>
+						<a href="#" class="direction">NEXT &rsaquo;</a>
+						<a href="#" class="direction">NEXT END &raquo;</a>
+					</form>
 <pre class="codeBlock">
 &lt;div class=&quot;<em>pagination</em>&quot;&gt;
-	&lt;a href=&quot;#&quot; class=&quot;<em>direction</em>&quot;&gt;&lt;span&gt;&amp;laquo;&lt;/span&gt; PREV END&lt;/a&gt;
-	&lt;a href=&quot;#&quot; class=&quot;<em>direction</em>&quot;&gt;&lt;span&gt;&amp;lsaquo;&lt;/span&gt; PREV&lt;/a&gt;
-	&lt;a href=&quot;#&quot;&gt;11&lt;/a&gt;
-	&lt;strong&gt;12&lt;/strong&gt;
+	&lt;a href=&quot;#&quot; class=&quot;<em>direction</em>&quot;&gt;&laquo; PREV END&lt;/a&gt;
+	&lt;a href=&quot;#&quot; class=&quot;<em>direction</em>&quot;&gt;&lsaquo; PREV&lt;/a&gt;
+	&lt;strong&gt;11&lt;/strong&gt;
+	&lt;a href=&quot;#&quot;&gt;12&lt;/a&gt;
 	&lt;a href=&quot;#&quot;&gt;13&lt;/a&gt;
 	&lt;a href=&quot;#&quot;&gt;14&lt;/a&gt;
 	&lt;a href=&quot;#&quot;&gt;15&lt;/a&gt;
-	&lt;a href=&quot;#&quot;&gt;16&lt;/a&gt;
-	&lt;a href=&quot;#&quot;&gt;17&lt;/a&gt;
-	&lt;a href=&quot;#&quot;&gt;18&lt;/a&gt;
-	&lt;a href=&quot;#&quot;&gt;19&lt;/a&gt;
-	&lt;a href=&quot;#&quot;&gt;20&lt;/a&gt;
-	&lt;a href=&quot;#&quot; class=&quot;<em>direction</em>&quot;&gt;NEXT &lt;span&gt;&amp;rsaquo;&lt;/span&gt;&lt;/a&gt;
-	&lt;a href=&quot;#&quot; class=&quot;<em>direction</em>&quot;&gt;NEXT END &lt;span&gt;&amp;raquo;&lt;/span&gt;&lt;/a&gt;
+	&lt;a href=&quot;#&quot; class=&quot;<em>direction</em>&quot;&gt;NEXT &rsaquo;&lt;/a&gt;
+	&lt;a href=&quot;#&quot; class=&quot;<em>direction</em>&quot;&gt;NEXT END &raquo;&lt;/a&gt;
 &lt;/div&gt;
+&lt;form action=&quot;&quot; class=&quot;<em>pagination</em>&quot;&gt;
+	&lt;a href=&quot;#&quot; class=&quot;<em>direction</em>&quot;&gt;&laquo; PREV END&lt;/a&gt;
+	&lt;a href=&quot;#&quot; class=&quot;<em>direction</em>&quot;&gt;&lsaquo; PREV&lt;/a&gt;
+	&lt;input value=&quot;11&quot; /&gt;
+	&lt;a href=&quot;#&quot;&gt;12&lt;/a&gt;
+	&lt;a href=&quot;#&quot;&gt;13&lt;/a&gt;
+	&lt;a href=&quot;#&quot;&gt;14&lt;/a&gt;
+	&lt;a href=&quot;#&quot;&gt;15&lt;/a&gt;
+	&lt;a href=&quot;#&quot; class=&quot;<em>direction</em>&quot;&gt;NEXT &rsaquo;&lt;/a&gt;
+	&lt;a href=&quot;#&quot; class=&quot;<em>direction</em>&quot;&gt;NEXT END &raquo;&lt;/a&gt;
+&lt;/form&gt;
 </pre>
 					<h3>CSS</h3>
 <pre class="codeBlock">
 /* Pagination */
 .pagination{margin:1em 0;text-align:center;line-height:normal}
 .pagination a,
-.pagination strong{position:relative;display:inline-block;margin:0 -2px;padding:2px 8px;font-weight:bold;text-decoration:none;line-height:normal;color:#333;vertical-align:middle}
+.pagination strong{position:relative;display:inline-block;padding:2px 4px;font-weight:bold;text-decoration:none;line-height:normal;color:#333;vertical-align:middle}
 .pagination a:hover,
 .pagination a:active,
-.pagination a:focus{background-color:#f8f8f8;}
-.pagination strong{color:#e00;font-size:20px}
+.pagination a:focus{border:1px solid #ddd;margin:0 -1px}
+.pagination strong,
+.pagination input{color:#e00;font-size:20px;width:32px;text-align:center;vertical-align:middle}
 .pagination .direction{font-weight:normal;white-space:nowrap}
-.pagination .direction span{font-weight:bold;font-size:14px}
 .pagination .direction:hover,
 .pagination .direction:active,
-.pagination .direction:focus{background-color:#fff}
+.pagination .direction:focus{border:0;margin:0;text-decoration:underline}
 </pre>
 				</div>
 			</article>
