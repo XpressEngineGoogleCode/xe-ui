@@ -73,7 +73,7 @@ img{border:0}
 .form input[type=text],.form input[type=password],.form input[type=file]{height:22px;line-height:22px;vertical-align:top;padding:0 4px}
 .form input[type=checkbox],.form input[type=radio]{margin:0;padding:0;width:13px;height:13px;vertical-align:middle}
 .form input[disabled=disabled]{background:#ddd;text-shadow:1px 1px 0 #fff}
-.form textarea{padding:3px 4px}
+.form textarea{padding:3px 4px;vertical-align:top}
 .form span.desc{line-height:22px;vertical-align:middle;margin:0 10px}
 .form p.desc{margin:.25em 0;line-height:1.4}
 .form .question{font-weight:bold;margin:0 0 5px 0}
