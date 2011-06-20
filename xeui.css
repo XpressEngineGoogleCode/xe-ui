@@ -53,6 +53,10 @@ img{border:0}
 .table img{vertical-align:middle}
 .table .title,
 .table .text{white-space:normal}
+.table .h1 + table,
+.table .h2 + table,
+.table .h3 + table,
+.table .h4 + table,
 .h1 + .table table,
 .h2 + .table table,
 .h3 + .table table,
