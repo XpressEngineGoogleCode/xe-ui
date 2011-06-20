@@ -1093,9 +1093,11 @@ jQuery(function($){
 .table th{background:#f8f8f8}
 .table thead th{border-bottom:1px solid #999}
 .table tfoot td{font-weight:bold;background:#f8f8f8}
+.table.even tbody tr:nth-of-type(even) td{background-color:#fafafa}
 .table input[type=text]{margin:-1px 0 -3px 0;vertical-align:middle}
 .table img{vertical-align:middle}
-.table .title{white-space:normal}
+.table .title,
+.table .text{white-space:normal}
 .h1 + .table table,
 .h2 + .table table,
 .h3 + .table table,
@@ -1120,6 +1122,21 @@ jQuery(function($){
 								</tr>
 							</tfoot>
 							<tbody>
+								<tr>
+									<th scope="row">th</th>
+									<td>td</td>
+									<td>td</td>
+								</tr>
+								<tr>
+									<th scope="row">th</th>
+									<td>td</td>
+									<td>td</td>
+								</tr>
+								<tr>
+									<th scope="row">th</th>
+									<td>td</td>
+									<td>td</td>
+								</tr>
 								<tr>
 									<th scope="row">th</th>
 									<td>td</td>
@@ -1152,13 +1169,28 @@ jQuery(function($){
 				&lt;td&gt;td&lt;/td&gt;
 				&lt;td&gt;td&lt;/td&gt;
 			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th scope=&quot;row&quot;&gt;th&lt;/th&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th scope=&quot;row&quot;&gt;th&lt;/th&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th scope=&quot;row&quot;&gt;th&lt;/th&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+			&lt;/tr&gt;
 		&lt;/tbody&gt;
 	&lt;/table&gt;
 &lt;/div&gt;
 </pre>
-					<div class="table">
+					<div class="table even">
 						<table width="100%" border="1" cellspacing="0">
-							<caption>Top header. <em>This is a caption text.</em> <span class="side">Sort by <a href="#">Date</a> | <a href="#">Name</a></span></caption>
+							<caption>Top header + even tr background.<em>This is a caption text.</em> <span class="side">Sort by <a href="#">Date</a> | <a href="#">Name</a></span></caption>
 							<thead>
 								<tr>
 									<th scope="col">th</th>
@@ -1179,11 +1211,26 @@ jQuery(function($){
 									<td>td</td>
 									<td>td</td>
 								</tr>
+								<tr>
+									<td>td</td>
+									<td>td</td>
+									<td>td</td>
+								</tr>
+								<tr>
+									<td>td</td>
+									<td>td</td>
+									<td>td</td>
+								</tr>
+								<tr>
+									<td>td</td>
+									<td>td</td>
+									<td>td</td>
+								</tr>
 							</tbody>
 						</table>
 					</div>
 <pre class="codeBlock">
-&lt;div class=&quot;<em>table</em>&quot;&gt;
+&lt;div class=&quot;<em>table even</em>&quot;&gt;
 	&lt;table width=&quot;100%&quot; border=&quot;1&quot; cellspacing=&quot;0&quot;&gt;
 		&lt;caption&gt;caption &lt;em&gt;em&lt;/em&gt; &lt;span class=&quot;<em>side</em>&quot;&gt;Sort by &lt;a href=&quot;#&quot;&gt;Date&lt;/a&gt; | &lt;a href=&quot;#&quot;&gt;Name&lt;/a&gt;&lt;/span&gt;&lt;/caption&gt;
 		&lt;thead&gt;
@@ -1201,6 +1248,21 @@ jQuery(function($){
 			&lt;/tr&gt;
 		&lt;/tfoot&gt;
 		&lt;tbody&gt;
+			&lt;tr&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+			&lt;/tr&gt;
 			&lt;tr&gt;
 				&lt;td&gt;td&lt;/td&gt;
 				&lt;td&gt;td&lt;/td&gt;
@@ -1226,6 +1288,21 @@ jQuery(function($){
 									<td>td</td>
 									<td>td</td>
 								</tr>
+								<tr>
+									<th scope="row">th</th>
+									<td>td</td>
+									<td>td</td>
+								</tr>
+								<tr>
+									<th scope="row">th</th>
+									<td>td</td>
+									<td>td</td>
+								</tr>
+								<tr>
+									<th scope="row">th</th>
+									<td>td</td>
+									<td>td</td>
+								</tr>
 							</tbody>
 						</table>
 					</div>
@@ -1241,6 +1318,21 @@ jQuery(function($){
 			&lt;/tr&gt;
 		&lt;/tfoot&gt;
 		&lt;tbody&gt;
+			&lt;tr&gt;
+				&lt;th scope=&quot;row&quot;&gt;th&lt;/th&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th scope=&quot;row&quot;&gt;th&lt;/th&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th scope=&quot;row&quot;&gt;th&lt;/th&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+			&lt;/tr&gt;
 			&lt;tr&gt;
 				&lt;th scope=&quot;row&quot;&gt;th&lt;/th&gt;
 				&lt;td&gt;td&lt;/td&gt;
