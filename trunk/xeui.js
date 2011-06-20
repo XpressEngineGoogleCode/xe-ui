@@ -36,9 +36,9 @@ jQuery(function($){
 	formThCheck.change(function(){
 		var formTdCheck = $(this).parents('table').find('td>:checkbox');
 		if($(this).is(':checked')){
-			formTdCheck.attr('checked','checked');
+			formTdCheck.attr('checked','checked').change();
 		} else {
-			formTdCheck.removeAttr('checked');
+			formTdCheck.removeAttr('checked').change();
 		}
 	});
 	formThCheck.change();
