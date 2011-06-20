@@ -48,9 +48,11 @@ img{border:0}
 .table th{background:#f8f8f8}
 .table thead th{border-bottom:1px solid #999}
 .table tfoot td{font-weight:bold;background:#f8f8f8}
+.table.even tbody tr:nth-of-type(even) td{background-color:#fafafa}
 .table input[type=text]{margin:-1px 0 -3px 0;vertical-align:middle}
 .table img{vertical-align:middle}
-.table .title{white-space:normal}
+.table .title,
+.table .text{white-space:normal}
 .h1 + .table table,
 .h2 + .table table,
 .h3 + .table table,
