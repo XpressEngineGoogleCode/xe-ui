@@ -1408,12 +1408,12 @@ jQuery(function($){
 		.blur();
 	// Checked
 	var inputRC = $('input[type=radio], input[type=checkbox]');
-	$('input:checked').next('label').css('fontWeight','bold');
 	inputRC.change(function(){
 		var myName = $(this).attr('name');
 		inputRC.filter('[name='+myName+']').not(':checked').next('label').css('fontWeight','normal');
 		$(this).filter(':checked').next('label').css('fontWeight','bold');
 	});
+	inputRC.change();
 	// Check All
 	var formThCheck = $('.form th&gt;:checkbox');
 	formThCheck.change(function(){
