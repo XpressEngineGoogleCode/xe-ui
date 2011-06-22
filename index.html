@@ -1007,6 +1007,8 @@ jQuery(function($){
 						<a href="#">13</a>
 						<a href="#">14</a>
 						<a href="#">15</a>
+						...
+						<a href="#">99</a>
 						<a href="#" class="direction">NEXT &rsaquo;</a>
 						<a href="#" class="direction">LAST &raquo;</a>
 					</div>
@@ -1023,6 +1025,7 @@ jQuery(function($){
 							<input title="Go to Page" /> 
 							<button type="submit">GO</button>
 						</span>
+						<a href="#">99</a>
 						<a href="#" class="direction">NEXT &rsaquo;</a>
 						<a href="#" class="direction">LAST &raquo;</a>
 					</form>
@@ -1035,6 +1038,8 @@ jQuery(function($){
 	&lt;a href=&quot;#&quot;&gt;13&lt;/a&gt;
 	&lt;a href=&quot;#&quot;&gt;14&lt;/a&gt;
 	&lt;a href=&quot;#&quot;&gt;15&lt;/a&gt;
+	&lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;
+	&lt;a href=&quot;#&quot;&gt;99&lt;/a&gt;
 	&lt;a href=&quot;#&quot; class=&quot;<em>direction</em>&quot;&gt;NEXT &rsaquo;&lt;/a&gt;
 	&lt;a href=&quot;#&quot; class=&quot;<em>direction</em>&quot;&gt;NEXT END &raquo;&lt;/a&gt;
 &lt;/div&gt;
@@ -1051,6 +1056,7 @@ jQuery(function($){
 		&lt;input title=&quot;Go to Page&quot; /&gt; 
 		&lt;button type=&quot;submit&quot;&gt;GO&lt;/button&gt;
 	&lt;/span&gt;
+	&lt;a href=&quot;#&quot;&gt;99&lt;/a&gt;
 	&lt;a href=&quot;#&quot; class=&quot;<em>direction</em>&quot;&gt;NEXT &rsaquo;&lt;/a&gt;
 	&lt;a href=&quot;#&quot; class=&quot;<em>direction</em>&quot;&gt;LAST &raquo;&lt;/a&gt;
 &lt;/form&gt;
@@ -1072,6 +1078,32 @@ jQuery(function($){
 .pagination .direction:focus{border:0;margin:0;text-decoration:underline}
 .pagination input{width:30px;text-align:center}
 .pagination button{overflow:visible}
+</pre>
+					<h3>JS</h3>
+<pre class="codeBlock">
+jQuery(function($){
+	// Toggle
+	var tgContent = $('.tgContent');
+	var tgBlurHtml = '&lt;button type=&quot;button&quot; class=&quot;tgBlur&quot;&gt;&lt;/button&gt;';
+	tgContent.hide().prepend(tgBlurHtml);
+	var tgBlur = $('.tgBlur');
+	tgBlur.eq(0).clone().appendTo(tgContent);
+	$('.tgSimple').click(function(){
+		$($(this).attr('href')).toggle().find('a, input, select, textarea').eq(0).focus();
+		return false;
+	});
+	function closeTg() {
+		var closeId = tgContent.filter(':visible').attr('id');
+		if(closeId) $('.tgSimple, .tgSlide, .tgFade').filter('[href=&quot;#'+closeId+'&quot;]').focus();
+		tgContent.prev('input').focus();
+		tgContent.fadeOut(200);
+	}
+	$(document).keydown(function(event){
+		if(event.keyCode != 27) return true; // ESC
+		return closeTg();
+	});
+	$('.tgBlur').focusin(closeTg);
+});
 </pre>
 				</div>
 			</article>
