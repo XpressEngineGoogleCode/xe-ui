@@ -399,4 +399,3 @@ jQuery(function($){
 		$(this).next(codeBlock).slideToggle(100);
 	});
 });
-
