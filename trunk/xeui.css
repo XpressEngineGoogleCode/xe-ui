@@ -73,7 +73,7 @@ img{border:0}
 .form li>label:first-child{display:block;font-weight:bold}
 .form li label em{font-weight:normal}
 .form input[type=text],.form input[type=password],.form input[type=file],textarea{position:relative;width:280px;margin:2px 0;border:1px solid #b7b7b7;border-right-color:#e1e1e1;border-bottom-color:#e1e1e1;background:transparent}
-.form input[type=text],.form input[type=password],.form input[type=file]{height:22px;line-height:22px;vertical-align:top;padding:0 4px}
+.form input[type=text],.form input[type=password],.form input[type=file]{height:22px;line-height:22px;vertical-align:middle;padding:0 4px}
 .form input[type=checkbox],.form input[type=radio]{margin:0;padding:0;width:13px;height:13px;vertical-align:middle}
 .form input[disabled=disabled]{background:#ddd;text-shadow:1px 1px 0 #fff}
 .form textarea{padding:3px 4px;vertical-align:top}
