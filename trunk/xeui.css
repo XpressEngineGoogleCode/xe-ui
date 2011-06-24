@@ -5,6 +5,7 @@ body,table,input,textarea,select,button{font-family:Tahoma,Geneva,sans-serif;fon
 header,footer,section,article,aside,nav,hgroup,details,menu,figure,figcaption{display:block}
 button,input[type=submit],input[type=reset],input[type=button]{cursor:pointer;overflow:visible}
 img{border:0}
+p{line-height:1.5}
 /* XEUI Content */
 .codeBlock{font-family:"Lucida Console", Monaco, monospace;background:#333;color:#fff;padding:1em;overflow:auto}
 .codeBlock em{font-style:normal;color:#e00}
