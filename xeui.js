@@ -321,6 +321,7 @@ jQuery(function($){
 	modalFg.prepend(modalBlurHtml);
 	var modalBlur = $('.modalBlur');
 	modalBlur.eq(0).clone().appendTo(modalFg);
+	modal.append('<!--[if IE 6]><iframe class="ie6"></iframe><[endif]-->');
 	modalAnchor.click(function(){
 		htmlBody.css({'width':'100%','height':'100%'});
 		modal.fadeToggle(200).toggleClass('modalActive');
