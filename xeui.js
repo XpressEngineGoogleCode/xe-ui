@@ -327,7 +327,6 @@ jQuery(function($){
 		modal.fadeToggle(200).toggleClass('modalActive');
 		modalFg.find('>.modalClose:first').focus();
 		$(this).addClass('active');
-		return false;
 	});
 	function closeModal() {
 		htmlBody.removeAttr('style');

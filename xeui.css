@@ -31,7 +31,7 @@ p{line-height:1.5}
 .portlet .lined{margin:1px;padding:0;list-style:none}
 .portlet .lined li{padding:.5em 8em .5em 1em;border-top:1px solid #eee;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis}
 .portlet .lined li:first-child{border:0}
-.portlet .side{position:absolute;top:1px;right:0;color:#666;background:#fff;padding:0 1em}
+.portlet .side{position:absolute;top:0;_top:1px;right:0;color:#666;background:#fff;padding:0 1em}
 .portlet .lined .side{padding:.5em 1em}
 .portlet .more{position:absolute;top:.5em;right:1em;text-decoration:none !important;color:#666}
 .portlet .more span{color:#999}
