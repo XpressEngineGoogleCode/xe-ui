@@ -1409,7 +1409,7 @@ jQuery(function($){
 <pre class="codeBlock">
 jQuery(function($){
 	// Input Cleaner
-	var overlapLabel = $('.form li').find(':text,:password,textarea').prev('label');
+	var overlapLabel = $('.form li').find('&gt;:text,&gt;:password,&gt;textarea').prev('label');
 	var overlapInput = overlapLabel.next(':text,:password,textarea');
 	overlapLabel.css({'position':'absolute','top':'15px','left':'5px'}).parent().css('position','relative');
 	overlapInput
@@ -2459,7 +2459,7 @@ jQuery(function($){
 		.appendTo('body')
 		.height($(document).height())
 		.prepend('&lt;span class=&quot;bg&quot;&gt;&lt;/span&gt;')
-		.append('&lt;!--[if IE 6]&gt;&lt;iframe class=&quot;ie6&quot;&gt;&lt;/iframe&gt;&lt;[endif]--&gt;');
+		.append('&lt;!--[if IE 6]&gt;&lt;iframe class=&quot;ie6&quot;&gt;&lt;/iframe&gt;&lt;![endif]--&gt;');
 	modalFg
 		.prepend(modalCloseHtml)
 		.prepend(modalBlurHtml);
