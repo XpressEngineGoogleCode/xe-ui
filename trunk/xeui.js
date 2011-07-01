@@ -1,7 +1,7 @@
 /* NHN (developers@xpressengine.com) */
 jQuery(function($){
 	// Label Overlapping
-	var overlapLabel = $('.form li').find(':text,:password,textarea').prev('label');
+	var overlapLabel = $('.form li').find('>:text,>:password,>textarea').prev('label');
 	var overlapInput = overlapLabel.next(':text,:password,textarea');
 	overlapLabel.css({'position':'absolute','top':'15px','left':'5px'}).parent().css('position','relative');
 	overlapInput
@@ -319,7 +319,7 @@ jQuery(function($){
 		.appendTo('body')
 		.height($(document).height())
 		.prepend('<span class="bg"></span>')
-		.append('<!--[if IE 6]><iframe class="ie6"></iframe><[endif]-->');
+		.append('<!--[if IE 6]><iframe class="ie6"></iframe><![endif]-->');
 	modalFg
 		.prepend(modalCloseHtml)
 		.prepend(modalBlurHtml);
@@ -354,7 +354,7 @@ jQuery(function($){
 	// Toggle
 	var tgContent = $('.tgContent');
 	var tgBlurHtml = '<button type="button" class="tgBlur"></button>';
-	tgContent.hide().prepend(tgBlurHtml).parent().css('position','relative');
+	tgContent.hide().prepend(tgBlurHtml);
 	var tgBlur = $('.tgBlur');
 	tgBlur.eq(0).clone().appendTo(tgContent);
 	function offsetToggle(){
@@ -389,7 +389,7 @@ jQuery(function($){
 		return closeTg();
 	});
 	$('.tgBlur').focusin(closeTg);
-	// Action
+	// Portlet Action
 	var action = $('.portlet .action');
 	var action_li = action.parent('li');
 	action.hide().css({'position':'absolute'});
