@@ -314,14 +314,19 @@ jQuery(function($){
 	var modalFg = modal.find('>.fg');
 	var modalCloseHtml = '<button type="button" class="modalClose" title="Close this layer">X</button>';
 	var modalBlurHtml = '<button type="button" class="modalBlur"></button>';
-	modal.appendTo('body').hide().prepend('<span class="bg"></span>');
-	modalFg.prepend(modalCloseHtml);
+	modal
+		.hide()
+		.appendTo('body')
+		.height($(document).height())
+		.prepend('<span class="bg"></span>')
+		.append('<!--[if IE 6]><iframe class="ie6"></iframe><[endif]-->');
+	modalFg
+		.prepend(modalCloseHtml)
+		.prepend(modalBlurHtml);
 	var modalClose = $('.modalClose');
-	modalClose.eq(0).clone().appendTo(modalFg);
-	modalFg.prepend(modalBlurHtml);
 	var modalBlur = $('.modalBlur');
+	modalClose.eq(0).clone().appendTo(modalFg);
 	modalBlur.eq(0).clone().appendTo(modalFg);
-	modal.append('<!--[if IE 6]><iframe class="ie6"></iframe><[endif]-->');
 	modalAnchor.click(function(){
 		if(typeof document.body.style.maxHeight == "undefined"){
 			htmlBody.css({'width':'100%','height':'100%'});

@@ -2454,14 +2454,19 @@ jQuery(function($){
 	var modalFg = modal.find('&gt;.fg');
 	var modalCloseHtml = '&lt;button type=&quot;button&quot; class=&quot;modalClose&quot; title=&quot;Close this layer&quot;&gt;X&lt;/button&gt;';
 	var modalBlurHtml = '&lt;button type=&quot;button&quot; class=&quot;modalBlur&quot;&gt;&lt;/button&gt;';
-	modal.appendTo('body').hide().prepend('&lt;span class=&quot;bg&quot;&gt;&lt;/span&gt;');
-	modalFg.prepend(modalCloseHtml);
+	modal
+		.hide()
+		.appendTo('body')
+		.height($(document).height())
+		.prepend('&lt;span class=&quot;bg&quot;&gt;&lt;/span&gt;')
+		.append('&lt;!--[if IE 6]&gt;&lt;iframe class=&quot;ie6&quot;&gt;&lt;/iframe&gt;&lt;[endif]--&gt;');
+	modalFg
+		.prepend(modalCloseHtml)
+		.prepend(modalBlurHtml);
 	var modalClose = $('.modalClose');
-	modalClose.eq(0).clone().appendTo(modalFg);
-	modalFg.prepend(modalBlurHtml);
 	var modalBlur = $('.modalBlur');
+	modalClose.eq(0).clone().appendTo(modalFg);
 	modalBlur.eq(0).clone().appendTo(modalFg);
-	modal.append('&lt;!--[if IE 6]&gt;&lt;iframe class=&quot;ie6&quot;&gt;&lt;/iframe&gt;&lt;[endif]--&gt;');
 	modalAnchor.click(function(){
 		if(typeof document.body.style.maxHeight == &quot;undefined&quot;){
 			htmlBody.css({'width':'100%','height':'100%'});
