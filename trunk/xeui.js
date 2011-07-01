@@ -354,19 +354,28 @@ jQuery(function($){
 	// Toggle
 	var tgContent = $('.tgContent');
 	var tgBlurHtml = '<button type="button" class="tgBlur"></button>';
-	tgContent.hide().prepend(tgBlurHtml);
+	tgContent.hide().prepend(tgBlurHtml).parent().css('position','relative');
 	var tgBlur = $('.tgBlur');
 	tgBlur.eq(0).clone().appendTo(tgContent);
+	function offsetToggle(){
+		tgContent.filter(':visible').parent().css('position','relative');
+		setTimeout(function(){
+			tgContent.filter(':hidden').parent().css('position','');
+		}, 300);
+	}
 	$('.tgSimple').click(function(){
 		$($(this).attr('href')).toggle().find('a, input, select, textarea').eq(0).focus();
+		offsetToggle();
 		return false;
 	});
 	$('.tgSlide').click(function(){
 		$($(this).attr('href')).slideToggle(100).find('a, input, select, textarea').eq(0).focus();
+		offsetToggle();
 		return false;
 	});
 	$('.tgFade').click(function(){
 		$($(this).attr('href')).fadeToggle(200).find('a, input, select, textarea').eq(0).focus();
+		offsetToggle();
 		return false;
 	});
 	function closeTg() {
