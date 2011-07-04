@@ -2386,10 +2386,16 @@ jQuery(function($){
 	layer.prepend(layerBlurHtml);
 	var layerBlur = $('.layerBlur');
 	layerBlur.eq(0).clone().appendTo(layer);
-	layerAnchor.click(function(){
-		$($(this).attr('href')).fadeToggle(200).find('&gt;.layerClose:first').focus();
-		return false;
-	});
+	layerAnchor
+		.click(function(){
+			$($(this).attr('href')).fadeToggle(200).find('&gt;.layerClose:first').focus();
+			return false;
+		})
+		.keypress(function(){
+			if(event.keyCode != 32) return true;
+			$(this).click();
+			return false;
+		});
 	function closeLayer() {
 		var closeId = layer.filter(':visible').attr(&quot;id&quot;);
 		if(closeId) layerAnchor.filter('[href=&quot;#'+closeId+'&quot;]').focus();
@@ -2480,6 +2486,7 @@ jQuery(function($){
 		.keypress(function(){
 			if(event.keyCode != 32) return true;
 			$(this).click();
+			return false;
 		});
 	function closeModal() {
 		if(typeof document.body.style.maxHeight == &quot;undefined&quot;){
@@ -2559,6 +2566,7 @@ jQuery(function($){
 	$('.tgSimple, .tgSlide, .tgFade').keypress(function(){
 		if(event.keyCode != 32) return true;
 		$(this).click();
+		return false;
 	});
 	function closeTg() {
 		var closeId = tgContent.filter(':visible').attr('id');
