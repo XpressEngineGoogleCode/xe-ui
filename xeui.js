@@ -289,10 +289,16 @@ jQuery(function($){
 	layer.prepend(layerBlurHtml);
 	var layerBlur = $('.layerBlur');
 	layerBlur.eq(0).clone().appendTo(layer);
-	layerAnchor.click(function(){
-		$($(this).attr('href')).fadeToggle(200).find('>.layerClose:first').focus();
-		return false;
-	});
+	layerAnchor
+		.click(function(){
+			$($(this).attr('href')).fadeToggle(200).find('>.layerClose:first').focus();
+			return false;
+		})
+		.keypress(function(){
+			if(event.keyCode != 32) return true;
+			$(this).click();
+			return false;
+		});
 	function closeLayer() {
 		var closeId = layer.filter(':visible').attr("id");
 		if(closeId) layerAnchor.filter('[href="#'+closeId+'"]').focus();
@@ -339,6 +345,7 @@ jQuery(function($){
 		.keypress(function(){
 			if(event.keyCode != 32) return true;
 			$(this).click();
+			return false;
 		});
 	function closeModal() {
 		if(typeof document.body.style.maxHeight == "undefined"){
@@ -386,6 +393,7 @@ jQuery(function($){
 	$('.tgSimple, .tgSlide, .tgFade').keypress(function(){
 		if(event.keyCode != 32) return true;
 		$(this).click();
+		return false;
 	});
 	function closeTg() {
 		var closeId = tgContent.filter(':visible').attr('id');
