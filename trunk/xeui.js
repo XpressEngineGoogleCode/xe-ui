@@ -354,7 +354,7 @@ jQuery(function($){
 	// Toggle
 	var tgContent = $('.tgContent');
 	var tgBlurHtml = '<button type="button" class="tgBlur"></button>';
-	tgContent.hide().prepend(tgBlurHtml);
+	tgContent.hide().prepend(tgBlurHtml).mouseleave(function(){closeTg()});
 	var tgBlur = $('.tgBlur');
 	tgBlur.eq(0).clone().appendTo(tgContent);
 	function offsetToggle(){
