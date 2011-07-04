@@ -327,14 +327,19 @@ jQuery(function($){
 	var modalBlur = $('.modalBlur');
 	modalClose.eq(0).clone().appendTo(modalFg);
 	modalBlur.eq(0).clone().appendTo(modalFg);
-	modalAnchor.click(function(){
-		if(typeof document.body.style.maxHeight == "undefined"){
-			htmlBody.css({'width':'100%','height':'100%'});
-		}
-		modal.fadeToggle(200).toggleClass('modalActive');
-		modalFg.find('>.modalClose:first').focus();
-		$(this).addClass('active');
-	});
+	modalAnchor
+		.click(function(){
+			if(typeof document.body.style.maxHeight == "undefined"){
+				htmlBody.css({'width':'100%','height':'100%'});
+			}
+			modal.fadeToggle(200).toggleClass('modalActive');
+			modalFg.find('>.modalClose:first').focus();
+			$(this).addClass('active');
+		})
+		.keypress(function(){
+			if(event.keyCode != 32) return true;
+			$(this).click();
+		});
 	function closeModal() {
 		if(typeof document.body.style.maxHeight == "undefined"){
 			htmlBody.removeAttr('style');
@@ -364,19 +369,23 @@ jQuery(function($){
 		}, 300);
 	}
 	$('.tgSimple').click(function(){
-		$($(this).attr('href')).toggle().find('a, input, select, textarea').eq(0).focus();
+		$($(this).attr('href')).toggle().find('a, input, button:not(.tgBlur), select, textarea').eq(0).focus();
 		offsetToggle();
 		return false;
 	});
 	$('.tgSlide').click(function(){
-		$($(this).attr('href')).slideToggle(100).find('a, input, select, textarea').eq(0).focus();
+		$($(this).attr('href')).slideToggle(100).find('a, input, button:not(.tgBlur), select, textarea').eq(0).focus();
 		offsetToggle();
 		return false;
 	});
 	$('.tgFade').click(function(){
-		$($(this).attr('href')).fadeToggle(200).find('a, input, select, textarea').eq(0).focus();
+		$($(this).attr('href')).fadeToggle(200).find('a, input, button:not(.tgBlur), select, textarea').eq(0).focus();
 		offsetToggle();
 		return false;
+	});
+	$('.tgSimple, .tgSlide, .tgFade').keypress(function(){
+		if(event.keyCode != 32) return true;
+		$(this).click();
 	});
 	function closeTg() {
 		var closeId = tgContent.filter(':visible').attr('id');
