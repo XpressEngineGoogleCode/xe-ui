@@ -1399,8 +1399,8 @@ jQuery(function($){
 .form textarea{padding:3px 4px;vertical-align:top}
 .form span.desc{line-height:22px;vertical-align:middle}
 .form p.desc{margin:.25em 0;line-height:1.4}
-.form .question{font-weight:bold;color:#333;margin:0 0 5px 0}
-.form .answer{margin:0 0 5px 0}
+.form .q{font-weight:bold;color:#333;margin:0 0 5px 0}
+.form .a{margin:0 0 5px 0}
 .form .h1 + ul,
 .form .h2 + ul,
 .form .h3 + ul,
@@ -1458,51 +1458,51 @@ jQuery(function($){
 						<fieldset>
 							<ul>
 								<li>
-									<p class="question"><label for="id">ID <em>*</em></label></p>
-									<p class="answer">
+									<p class="q"><label for="id">ID <em>*</em></label></p>
+									<p class="a">
 										<input name="" type="text" id="id" style="width:200px" /> 
 										<button type="button">Duplication Check</button>
 									</p>
 									<p class="desc">ID must have to <em>3-20</em> alphabetic or numeric characters and the first letter should be alphabetic character.</p>
 								</li>
 								<li>
-									<p class="question"><label for="pw1">Password <em>*</em></label></p>
-									<p class="answer">
+									<p class="q"><label for="pw1">Password <em>*</em></label></p>
+									<p class="a">
 										<input name="" type="password" id="pw1" style="width:200px" />
 										<span class="desc">Requires <em>6-20</em> characters.</span>
 									</p>
 								</li>
 								<li>
-									<p class="question"><label for="pw2">Password Confirm <em>*</em></label></p> 
-									<p class="answer">
+									<p class="q"><label for="pw2">Password Confirm <em>*</em></label></p> 
+									<p class="a">
 										<input name="" type="password" id="pw2" style="width:200px" />
 										<span class="desc">Please enter your password once more.</span>
 									</p>
 								</li>
 								<li>
-									<p class="question"><label for="name">Name <em>*</em></label></p> 
-									<p class="answer">
+									<p class="q"><label for="name">Name <em>*</em></label></p> 
+									<p class="a">
 										<input name="" type="text" id="name" style="width:200px" />
 										<span class="desc">Requires <em>2-20</em> characters.</span>
 									</p>
 								</li>
 								<li>
-									<p class="question"><label for="nick">Nickname <em>*</em></label></p> 
-									<p class="answer">
+									<p class="q"><label for="nick">Nickname <em>*</em></label></p> 
+									<p class="a">
 										<input name="" type="text" id="nick" style="width:200px" />
 										<span class="desc">Requires <em>2-20</em> characters.</span>
 									</p>
 								</li>
 								<li>
-									<p class="question"><label for="email">Email <em>*</em></label></p> 
-									<p class="answer">
+									<p class="q"><label for="email">Email <em>*</em></label></p> 
+									<p class="a">
 										<input name="" type="text" id="email" style="width:200px" />
 										<span class="desc">Required to change your password and Find.</span>
 									</p>
 								</li>
 								<li>
-									<p class="question"><label for="phone">Phone</label></p> 
-									<p class="answer">
+									<p class="q"><label for="phone">Phone</label></p> 
+									<p class="a">
 										<input name="" type="text" id="phone" style="width:200px" />
 										<span class="desc">'-' Include or not does not matter.</span>
 									</p>
@@ -1660,8 +1660,8 @@ jQuery(function($){
 						<fieldset>
 							<ul>
 								<li>
-									<p class="question">Name or nickname, what do you want to display?</p>
-									<p class="answer">
+									<p class="q">Name or nickname, what do you want to display?</p>
+									<p class="a">
 										<input name="authorName" type="radio" id="useName" checked="checked" /> 
 										<label for="useName">Name</label> 
 										<input name="authorName" type="radio" id="useNick" /> 
@@ -1669,8 +1669,8 @@ jQuery(function($){
 									</p>
 								</li>
 								<li>
-									<p class="question">What are your interests?</p>
-									<p class="answer">
+									<p class="q">What are your interests?</p>
+									<p class="a">
 										<input name="interest" type="checkbox" id="humanities" checked="checked" /> 
 										<label for="humanities">Humanities</label> 
 										<input name="interest" type="checkbox" id="science" /> 
@@ -1711,8 +1711,8 @@ jQuery(function($){
 						<fieldset>
 							<ul>
 								<li>
-									<p class="question"><label for="select">Select &gt; Optgroup &gt; Option</label></p>
-									<p class="answer">
+									<p class="q"><label for="select">Select &gt; Optgroup &gt; Option</label></p>
+									<p class="a">
 										<select id="select">
 											<optgroup label="Optgroup">
 												<option value="">Option</option>
@@ -1756,8 +1756,8 @@ jQuery(function($){
 						<fieldset>
 							<ul>
 								<li>
-									<p class="question"><label for="userProfile">User Profile</label></p>
-									<p class="answer"><input name="" type="file" id="userProfile" /></p>
+									<p class="q"><label for="userProfile">User Profile</label></p>
+									<p class="a"><input name="" type="file" id="userProfile" /></p>
 								</li>
 							</ul>
 						</fieldset>
@@ -1779,8 +1779,8 @@ jQuery(function($){
 						<fieldset>
 							<ul>
 								<li>
-									<p class="question"><label for="signature">Signature: <em>If you create a signature it will be displayed at the bottom of the posts.</em></label></p>
-									<p class="answer"><textarea rows="5" cols="50" id="signature" style="width:600px"></textarea></p>
+									<p class="q"><label for="signature">Signature: <em>If you create a signature it will be displayed at the bottom of the posts.</em></label></p>
+									<p class="a"><textarea rows="5" cols="50" id="signature" style="width:600px"></textarea></p>
 								</li>
 							</ul>
 						</fieldset>
