@@ -330,58 +330,72 @@ p{line-height:1.5}
 .gnb li a:focus,
 .gnb li.active a,
 .gnb li.activeOn a{background:#fff;border:1px solid #ddd;padding:7px 17px}
-.gnb li li a{color:#555;padding:5px 15px !important;font-weight:normal !important;border:0 !important}
+.gnb li li a{display:block;float:none;color:#555;padding:5px 15px !important;font-weight:normal !important;border:0 !important}
 .gnb li li a:hover,
 .gnb li li a:active,
 .gnb li li a:focus{border:0;background:#eee}
-.gnb.jx ul{display:block !important;position:static;padding:0}
-.gnb.jx li{float:none;border-top:1px solid #ccc}
+.gnb.jx ul{display:block;position:static;padding:0}
+.gnb.jx li{float:none;clear:both;border-top:1px solid #ccc}
 .gnb.jx ul ul{border:0}
 .gnb.jx li li{border:0}
+.gnb.jx li a{float:none;display:block}
 .gnb.jx li a:hover,
 .gnb.jx li a:active,
-.gnb.jx li a:focus{background:none !important}
+.gnb.jx li a:focus{background:none}
+.gnb.jx li.activeOn a{background:#ddd}
+@media only all and (max-width:640px) {
+	.gnb ul{display:block;position:static;padding:0}
+	.gnb li{float:none;clear:both;border-top:1px solid #ccc}
+	.gnb ul ul{border:0;position:static}
+	.gnb li li{border:0}
+	.gnb li a{float:none;display:block}
+	.gnb li a:hover,
+	.gnb li a:active,
+	.gnb li a:focus{background:none}
+	.gnb li.activeOn a{background:#ddd}
+}
 </pre>
 					<h3>JS</h3>
 <pre class="codeBlock">
 jQuery(function($){
 	// Global Navigation Bar
 	var gnb = $('div.gnb');
-	var gnb_i = gnb.find('&gt;ul&gt;li');
+	var gnb_i = gnb.find('$gt;ul$gt;li');
+	var gnb_a = gnb_i.find('$gt;a');
 	gnb.removeClass('jx');
-	if($(document).width()&lt;=640){
-		gnb.addClass('jx');	
-	}
-	$(window).resize(function(){
-		if($(document).width()&lt;=640){
-		gnb.addClass('jx');	
-		} else {
-		gnb.removeClass('jx');
-		}
-	});
-	gnb_i.find('&gt;ul').hide();
-	gnb.find('&gt;ul&gt;li[class=active]').find('&gt;ul').show();
+	gnb_i.find('$gt;ul').hide();
+	gnb.find('$gt;ul$gt;li[class=active]').find('$gt;ul').show();
 	function gnbToggle(event){
-		if (!gnb.hasClass('jx')){
-			gnb_i.removeClass('active');
-			var t = $(this);
-			if (t.next('ul').is(':hidden')) {
-				gnb_i.find('&gt;ul').slideUp(100);
-				t.next('ul').slideDown(100);
-				t.parent('li').addClass('active');
-			} else if (t.next('ul').is(':visible')){
-				t.next('ul').show();
-				t.parent('li').addClass('active');
-			} else if (!t.next('ul').langth) {
-				gnb_i.find('&gt;ul').slideUp(100);
-				t.parent('li').removeClass('active');
-			}
+		var t = $(this);
+		gnb_i.removeClass('active');
+		if (t.next('ul').is(':hidden')) {
+			gnb_i.find('$gt;ul').slideUp(100);
+			t.next('ul').slideDown(100);
+			t.parent('li').addClass('active');
+		} else if (t.next('ul').is(':visible')){
+			t.next('ul').show();
+			t.parent('li').addClass('active');
+		} else if (!t.next('ul').langth) {
+			gnb_i.find('$gt;ul').slideUp(100);
+			t.parent('li').removeClass('active');
+		};
+	}
+	gnb_a.focus(gnbToggle).click(gnbToggle);
+	gnb_a.mouseover(function(){
+		if($(document).width()$gt;640){
+			$(this).click();
+		} else {
 			return false;
 		}
-	}
-	gnb_i.find('&gt;a').hover(gnbToggle).focus(gnbToggle);
-	gnb.find('li:last-child&gt;a, li:last-child&gt;ul&gt;li:last-child&gt;a').blur(gnbToggle);
-	gnb.mouseleave(gnbToggle);
+	});
+	gnb.mouseleave(function(){
+		if($(document).width()$gt;640){
+			gnbToggle();
+		} else {
+			return false;
+		}
+	});
+	gnb.find('li:last-child$gt;a, li:last-child$gt;ul$gt;li:last-child$gt;a').blur(gnbToggle);
 });
 </pre>
 					<h3>Lined Tab Navigation</h3>
