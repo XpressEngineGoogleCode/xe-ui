@@ -105,7 +105,7 @@ p{line-height:1.5}
 .gnb li li a:hover,
 .gnb li li a:active,
 .gnb li li a:focus{border:0;background:#eee}
-.gnb .setting{position:absolute;top:8px;right:1em;width:16px;height:0;padding:16px 0 0 0;overflow:hidden;background:url(../img/iconSetting.gif) no-repeat center}
+.gnb .setting{position:absolute;top:8px;right:1em;width:16px;height:0;padding:16px 0 0 0;overflow:hidden;background:url(./img/iconSetting.gif) no-repeat center}
 .gnb.jx ul{display:block;position:static;padding:0}
 .gnb.jx li{float:none;clear:both;border-top:1px solid #ccc}
 .gnb.jx ul ul{border:0}
@@ -114,7 +114,7 @@ p{line-height:1.5}
 .gnb.jx li a:hover,
 .gnb.jx li a:active,
 .gnb.jx li a:focus{background:none}
-.gnb.jx li.activeOn a{background:#ddd}
+.gnb.jx li.activeOn>a{background:#ddd}
 @media only all and (max-width:640px) {
 	.gnb ul{display:block;position:static;padding:0}
 	.gnb li{float:none;clear:both;border-top:1px solid #ccc}
@@ -124,7 +124,7 @@ p{line-height:1.5}
 	.gnb li a:hover,
 	.gnb li a:active,
 	.gnb li a:focus{background:none}
-	.gnb li.activeOn a{background:#ddd}
+	.gnb li.activeOn>a{background:#ddd}
 }
 /* Lined Tab Navigation */
 .tab.line{padding:0 0 35px 0;margin:1em 0}

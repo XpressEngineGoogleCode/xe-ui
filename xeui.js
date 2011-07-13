@@ -64,7 +64,7 @@ jQuery(function($){
 			t.parent('li').removeClass('active');
 		};
 	}
-	gnb_a.focus(gnbToggle).click(gnbToggle);
+	gnb_a.focus(gnbToggle).click(gnbToggle).filter('[href=#]').click(function(){return false});
 	gnb_a.mouseover(function(){
 		if($(document).width()>640){
 			$(this).click();
