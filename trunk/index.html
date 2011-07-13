@@ -285,6 +285,7 @@ p{line-height:1.5}
 								</ul>
 							</li>
 						</ul>
+						<a href="#" class="setting">GNB Setting</a>
 					</div>
 					<h3>XHTML</h3>
 <pre class="codeBlock">
@@ -312,6 +313,7 @@ p{line-height:1.5}
 			&lt;/ul&gt;
 		&lt;/li&gt;
 	&lt;/ul&gt;
+	&lt;a href=&quot;#&quot; class=&quot;<em>setting</em>&quot;&gt;GNB Setting&lt;/a&gt;
 &lt;/div&gt;
 </pre>
 					<h3>CSS</h3>
@@ -334,7 +336,7 @@ p{line-height:1.5}
 .gnb li li a:hover,
 .gnb li li a:active,
 .gnb li li a:focus{border:0;background:#eee}
-.gnb .setting{position:absolute;top:8px;right:1em;width:16px;height:0;padding:16px 0 0 0;overflow:hidden;background:url(../img/iconSetting.gif) no-repeat center}
+.gnb .setting{position:absolute;top:8px;right:1em;width:16px;height:0;padding:16px 0 0 0;overflow:hidden;background:url(./img/iconSetting.gif) no-repeat center}
 .gnb.jx ul{display:block;position:static;padding:0}
 .gnb.jx li{float:none;clear:both;border-top:1px solid #ccc}
 .gnb.jx ul ul{border:0}
@@ -343,7 +345,7 @@ p{line-height:1.5}
 .gnb.jx li a:hover,
 .gnb.jx li a:active,
 .gnb.jx li a:focus{background:none}
-.gnb.jx li.activeOn a{background:#ddd}
+.gnb.jx li.activeOn>a{background:#ddd}
 @media only all and (max-width:640px) {
 	.gnb ul{display:block;position:static;padding:0}
 	.gnb li{float:none;clear:both;border-top:1px solid #ccc}
@@ -353,7 +355,7 @@ p{line-height:1.5}
 	.gnb li a:hover,
 	.gnb li a:active,
 	.gnb li a:focus{background:none}
-	.gnb li.activeOn a{background:#ddd}
+	.gnb li.activeOn>a{background:#ddd}
 }
 </pre>
 					<h3>JS</h3>
@@ -381,7 +383,7 @@ jQuery(function($){
 			t.parent('li').removeClass('active');
 		};
 	}
-	gnb_a.focus(gnbToggle).click(gnbToggle);
+	gnb_a.focus(gnbToggle).click(gnbToggle).filter('[href=#]').click(function(){return false});
 	gnb_a.mouseover(function(){
 		if($(document).width()$gt;640){
 			$(this).click();
