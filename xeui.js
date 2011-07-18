@@ -321,10 +321,11 @@ jQuery(function($){
 	var modalFg = modal.find('>.fg');
 	var modalCloseHtml = '<button type="button" class="modalClose" title="Close this layer">X</button>';
 	var modalBlurHtml = '<button type="button" class="modalBlur"></button>';
+	var docHeight = $(document).height();
 	modal
 		.hide()
 		.appendTo('body')
-		.height($(document).height())
+		.height(docHeight)
 		.prepend('<span class="bg"></span>')
 		.append('<!--[if IE 6]><iframe class="ie6"></iframe><![endif]-->');
 	modalFg
