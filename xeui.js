@@ -1,6 +1,6 @@
 /* NHN (developers@xpressengine.com) */
 jQuery(function($){
-	// Label Overlapping
+	// Form Label Overlapping
 	var overlapLabel = $('.form li').find('>:text,>:password,>textarea').prev('label');
 	var overlapInput = overlapLabel.next(':text,:password,textarea');
 	overlapLabel.css({'position':'absolute','top':'15px','left':'5px'}).parent().css('position','relative');
@@ -23,15 +23,17 @@ jQuery(function($){
 			}
 		})
 		.blur();
-	// Checked
+	// Input Checked
 	var inputRC = $('input[type=radio], input[type=checkbox]');
 	inputRC.change(function(){
 		var myName = $(this).attr('name');
+		$('.form .tgForm').hide();
 		inputRC.filter('[name='+myName+']').not(':checked').next('label').css('fontWeight','normal');
-		$(this).filter(':checked').next('label').css('fontWeight','bold');
+		inputRC.filter(':checked').next('label').css('fontWeight','bold').next('.tgForm').show();
+		inputRC.parent().find(':not(:checked)').next('label').next('.tgForm').hide();
 	});
 	inputRC.change();
-	// Check All
+	// Input Check All
 	var formThCheck = $('.form th>:checkbox');
 	formThCheck.change(function(){
 		var formTdCheck = $(this).parents('table').find('td>:checkbox');
