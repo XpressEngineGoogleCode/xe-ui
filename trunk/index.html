@@ -2511,8 +2511,9 @@ jQuery(function($){
 			if(typeof document.body.style.maxHeight == &quot;undefined&quot;){
 				htmlBody.css({'width':'100%','height':'100%'});
 			}
-			modal.fadeToggle(200).toggleClass('modalActive');
-			modalFg.find('&gt;.modalClose:first').focus();
+			var myTarget = $($(this).attr('href'));
+			myTarget.fadeToggle(200).toggleClass('modalActive');
+			myTarget.find('>.fg>.modalClose:first').focus();
 			$(this).addClass('active');
 		})
 		.keypress(function(){
