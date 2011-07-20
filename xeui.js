@@ -342,8 +342,9 @@ jQuery(function($){
 			if(typeof document.body.style.maxHeight == "undefined"){
 				htmlBody.css({'width':'100%','height':'100%'});
 			}
-			modal.fadeToggle(200).toggleClass('modalActive');
-			modalFg.find('>.modalClose:first').focus();
+			var myTarget = $($(this).attr('href'));
+			myTarget.fadeToggle(200).toggleClass('modalActive');
+			myTarget.find('>.fg>.modalClose:first').focus();
 			$(this).addClass('active');
 		})
 		.keypress(function(){
