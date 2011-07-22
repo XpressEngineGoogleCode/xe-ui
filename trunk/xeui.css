@@ -89,7 +89,7 @@ p{line-height:1.5}
 .form .h4 + ul{border-top:0}
 /* Global Navigation Bar */
 .gnb{position:relative;clear:both;border:1px solid #c1c1c1;border-left:0;border-right:0;background:#efefef -webkit-gradient(linear, 0% 0%, 0% 100%, from(#efefef), to(#dcdcdc));background:#efefef -moz-linear-gradient(top, #efefef, #dcdcdc);filter:progid:DXImageTransform.Microsoft.gradient(startColorStr=#efefef, endColorStr=#dcdcdc);zoom:1}
-.gnb ul{margin:0;padding:0 0 0 15px;list-style:none;border:1px solid #fff;border-left:0;border-right:0;zoom:1}
+.gnb ul{margin:0;padding:0 0 0 2em;list-style:none;border:1px solid #fff;border-left:0;border-right:0;zoom:1}
 .gnb ul ul{position:absolute;top:33px;left:0;border:1px solid #ccc;padding:0;background:#fff}
 .gnb ul:after{content:"";display:block;clear:both}
 .gnb li{position:relative;float:left;border:1px solid #fff;border-top:0;border-bottom:0;margin:0 -1px 0 0}
@@ -105,7 +105,7 @@ p{line-height:1.5}
 .gnb li li a:hover,
 .gnb li li a:active,
 .gnb li li a:focus{border:0;background:#eee}
-.gnb .setting{position:absolute;top:8px;right:1em;width:16px;height:0;padding:16px 0 0 0;overflow:hidden;background:url(./img/iconSetting.gif) no-repeat center}
+.gnb .setting{position:absolute;top:8px;right:2em;width:16px;height:0;padding:16px 0 0 0;overflow:hidden;background:url(../img/iconSetting.gif) no-repeat center}
 .gnb.jx ul{display:block;position:static;padding:0}
 .gnb.jx li{float:none;clear:both;border-top:1px solid #ccc}
 .gnb.jx ul ul{border:0}
@@ -115,6 +115,10 @@ p{line-height:1.5}
 .gnb.jx li a:active,
 .gnb.jx li a:focus{background:none}
 .gnb.jx li.activeOn>a{background:#ddd}
+@media only all and (max-width:860px) {
+	.gnb ul{padding-left:1em}
+	.gnb .setting{right:1em}
+}
 @media only all and (max-width:640px) {
 	.gnb ul{display:block;position:static;padding:0}
 	.gnb li{float:none;clear:both;border-top:1px solid #ccc}
