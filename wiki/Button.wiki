@@ -2,9 +2,10 @@
 
 ==Details==
 Buttons are styled by assigning to them a specific CSS class.
-Buttons come by default in 4 colours:
+
+Buttons come by default in 4 colours to facilitate the color coding of actions:
 Gray {{{xe-ui-button-gray}}}, Green {{{xe-ui-button-green}}}, Red {{{xe-ui-button-red}}} and Yellow {{{xe-ui-button-yellow}}}.
-They come in four colors to facilitate the color coding of actions.
+
 All buttons come with 4 styled states: *normal*, *hover*, *active/focus* and *disabled*.
 
 Disabled buttons automatically have their *href* tag stripped together with all *onclick* actions. Also [http://api.jquery.com/event.preventDefault/ jQuery preventDefault] is called.
