@@ -1,8 +1,9 @@
 =UI Button Element=
 
 ==Details==
+Buttons are styled by assigning to them a specific CSS class.
 Buttons come by default in 4 colours:
-{{{xe-ui-button-gray}}}, {{{xe-ui-button-green}}}, {{{xe-ui-button-red}}} and {{{xe-ui-button-yellow}}}.
+Gray {{{xe-ui-button-gray}}}, Green {{{xe-ui-button-green}}}, Red {{{xe-ui-button-red}}} and Yellow {{{xe-ui-button-yellow}}}.
 They come in four colors to facilitate the color coding of actions.
 All buttons come with 4 styled states: *normal*, *hover*, *active/focus* and *disabled*.
 
