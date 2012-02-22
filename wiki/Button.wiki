@@ -1,0 +1,20 @@
+=UI Button Element=
+
+==Details==
+Buttons come by default in 4 colours:
+{{{xe-ui-button-gray}}}, {{{xe-ui-button-green}}}, {{{xe-ui-button-red}}} and {{{xe-ui-button-yellow}}}.
+They come in four colors to facilitate the color coding of actions.
+All buttons come with 4 styled states: *normal*, *hover*, *active/focus* and *disabled*.
+
+Disabled buttons automatically have their *href* tag stripped together with all *onclick* actions. Also [http://api.jquery.com/event.preventDefault/ jQuery preventDefault] is called.
+
+==Examples==
+Normal gray button:
+{{{
+<a href="/mylink" onclick="alert('Not bad!') class="xe-ui-button-gray">I am a button!</a>
+}}}
+
+Green button disabled:
+{{{
+<a href="/mylink" onclick="alert('Not bad!') class="xe-ui-button-green disabled">I am a button!</a>
+}}}
