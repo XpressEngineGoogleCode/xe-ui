@@ -6,4 +6,4 @@ Below is a list of coding rules if you choose to contribute to the UI kit.
 
 ===Naming===
 UI elements naming is in the following form:
-'xe-ui-[element name]'
+{{{xe-ui-'[element name']}}}
