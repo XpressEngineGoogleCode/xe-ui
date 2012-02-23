@@ -1,0 +1,37 @@
+=UI Footer Element=
+
+==Details==
+
+Footers require a specific markup that is exemplified in the Examples section below. They function much like the [Menu].
+
+To set up a Footer item you must assign a CSS class to a {{{<div>}}} (recommended) or another block element: {{{xe-ui-footer}}}. For extra nice looking effects, assign the {{{xe-ui-footer-texture}}} to another {{{<div>}}} nested in the first one. This is the actual footer bar, nor the footer itself.
+
+Footers can have nested elements like *{<p></p}* that can be aligned to the right or to the left by applying one of the following classes to them: {{{f-left}}} or {{{f-right}}}. This is useful when you are building a multi-column footer.
+
+==Examples==
+Example of 2 column footer with centered content.
+{{{
+<div class="xe-ui-footer">
+    <div class="xe-ui-footer-texture">
+        <div class="xe-ui-footer-center cleared">
+            <p class="f-left">Powered by <a href="/link">XE</a></p>
+            <p class="f-right">
+                <select class="xe-ui-panel-select">
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                </select>
+                <a href="/mylink" class="xe-ui-button-gray" target="_blank">Button</a>
+            </p>
+        </div>
+    </div>
+</div>
+}}}
+
+Make sure you also add this css to your file:
+{{{
+.xe-ui-footer-center {
+    width: 980px;
+    margin: 0 auto;
+}
+}}}
