@@ -1,0 +1,46 @@
+=UI Panel Element=
+
+==Details==
+
+A panel is a element that separates, from a logical point of view, different areas of the page.
+
+A panel is a {{{<div></div>}}} with the {{{xe-ui-panel}}} class applied to it. It has two sections:
+
+===Content===
+
+Content is placed in a {{{<div></div>}}} with the {{{xe-ui-panel-controller}}} class applied.
+{{{
+<div class="xe-ui-panel">
+	<div class="xe-ui-panel-content">
+		Content goes here.
+	</div>
+</div>
+}}}
+
+===Controls===
+
+Panel actions should be placed in the controls section of the panel. The controls section is a {{{<div></div>}}} with the {{{xe-ui-panel-controller}}} class applied.
+
+You can add a nice {{{<hr />}}} separator that is already skinned.
+{{{
+<div class="xe-ui-panel">
+        <hr />
+	<div class="xe-ui-panel-content">
+		Content goes here.
+	</div>
+	<div class="xe-ui-panel-controller">
+		Controls go here.
+	</div>
+</div>
+}}}
+
+==Examples==
+A panel with content and functionality:
+{{{
+<input type="text" value="" class="xe-ui-panel-text" />
+}}}
+
+Disabled input:
+{{{
+<input type="text" value="" class="xe-ui-panel-text disabled" />
+}}}
