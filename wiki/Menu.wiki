@@ -4,16 +4,16 @@
 
 Menus require a specific markup that is exemplified in the Examples section below.
 
-To set up a Menu item you must assign a CSS class to a *<div>* (recommended) or another block element: {{{xe-ui-menu}}}. For extra nice looking effects, assign the {{{xe-ui-menu-texture}}} to another *<div>* nested in the first one. This is the actual menu bar, nor the menu itself.
+To set up a Menu item you must assign a CSS class to a {{{<div>}}} (recommended) or another block element: {{{xe-ui-menu}}}. For extra nice looking effects, assign the {{{xe-ui-menu-texture}}} to another {{{<div>}}} nested in the first one. This is the actual menu bar, nor the menu itself.
 
 Menus are nested unordered lists and can be aligned to the right or to the left by applying one of the following classes to them: {{{f-left}}} or {{{f-right}}}.
 
-Menu items must have the CSS class: {{{xe-ui-menu-item}}} and must contain an anchor tag (*<a></a>*). Menu items can be of three types:
+Menu items must have the CSS class: {{{xe-ui-menu-item}}} and must contain an anchor tag ({{{<a></a>}}}). Menu items can be of three types:
  * Text: {{{<li class="xe-ui-menu-item"><a href="/mylink">Menu item</a></li>}}}
  * Image:  {{{}}}
  * Text with Icon: {{{}}}
 
-Submenus can be added as an additional *'<ul>'* nested in a menu item with the {{{xe-ui-menu-submenu}}} class applied to them. Submenu items must al have a CSS class: {{{xe-ui-menu-submenu-item}}}.
+Submenus can be added as an additional {{{<ul>}}} nested in a menu item with the {{{xe-ui-menu-submenu}}} class applied to them. Submenu items must al have a CSS class: {{{xe-ui-menu-submenu-item}}}.
 
 ==Examples==
 Normal textarea:
