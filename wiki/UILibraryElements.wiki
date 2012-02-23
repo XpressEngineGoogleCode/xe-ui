@@ -1,6 +1,7 @@
-=UI Library Elements=
+=UI Elements=
 
-Below is a list of available elements as far:
+Below is a list of available
+elements as far:
  * [Button]
  * [Select]
  * [Textfield]
