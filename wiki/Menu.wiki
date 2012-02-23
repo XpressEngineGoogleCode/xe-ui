@@ -15,7 +15,7 @@ Menu items must have the CSS class: {{{xe-ui-menu-item}}} and must contain an an
 }}}
  * Image:
 {{{
-<li class="xe-ui-menu-item but"><a href="/mylink">Menu item</a></li>
+<li class="xe-ui-menu-item but"><a href="/mylink"><img src="image.png" /></a></li>
 }}}
  * Text with Icon:
 {{{
@@ -33,7 +33,7 @@ Normal textarea:
         <ul class="f-left">
             <!-- Image menu item --> 
             <li class="xe-ui-menu-item image first but">
-                <a href="/mylink" class="xe-ui-menu-item-but"><img src="icon.png" /></a>
+                <a href="/mylink" class="xe-ui-menu-item-but"><img src="image.png" /></a>
                 <ul class="xe-ui-menu-submenu">
                     <li class="xe-ui-menu-submenu-item"><a href="">About XpressEngine</a></li>
                     <li class="xe-ui-menu-submenu-item"><a href="">Documentation</a></li>
@@ -54,7 +54,7 @@ Normal textarea:
         <ul class="f-right">
             <!-- Image menu item --> 
             <li class="xe-ui-menu-item image first but">
-                <a href="/mylink" class="xe-ui-menu-item-but"><img src="icon.png" /></a>
+                <a href="/mylink" class="xe-ui-menu-item-but"><img src="image.png" /></a>
                 <ul class="xe-ui-menu-submenu">
                     <li class="xe-ui-menu-submenu-item"><a href="">About XpressEngine</a></li>
                     <li class="xe-ui-menu-submenu-item"><a href="">Documentation</a></li>
