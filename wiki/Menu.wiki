@@ -1,0 +1,66 @@
+=UI Menu Element=
+
+==Details==
+
+Menus require a specific markup that is exemplified in the Examples section below.
+
+To set up a Menu item you must assign a CSS class to a *<div>* (recommended) or another block element: {{{xe-ui-menu}}}. For extra nice looking effects, assign the {{{xe-ui-menu-texture}}} to another *<div>* nested in the first one. This is the actual menu bar, nor the menu itself.
+
+Menus are nested unordered lists and can be aligned to the right or to the left by applying one of the following classes to them: {{{f-left}}} or {{{f-right}}}.
+
+Menu items must have the CSS class: {{{xe-ui-menu-item}}} and must contain an anchor tag (*<a></a>*). Menu items can be of three types:
+ * Text: {{{<li class="xe-ui-menu-item"><a href="/mylink">Menu item</a></li>
+ * 
+
+Submenus can be added as an additional *<ul>* nested in a menu item with the {{{xe-ui-menu-submenu}}} class applied to them. Submenu items must al have a CSS class: {{{xe-ui-menu-submenu-item}}}.
+
+==Examples==
+Normal textarea:
+{{{
+<div class="xe-ui-menu cleared">
+    <div class="xe-ui-menu-texture cleared">
+        <!-- Menu aligned to the left -->
+        <ul class="f-left">
+            <!-- Image menu item --> 
+            <li class="xe-ui-menu-item image first but">
+                <a href="/mylink" class="xe-ui-menu-item-but"><img src="icon.png" /></a>
+                <ul class="xe-ui-menu-submenu">
+                    <li class="xe-ui-menu-submenu-item"><a href="">About XpressEngine</a></li>
+                    <li class="xe-ui-menu-submenu-item"><a href="">Documentation</a></li>
+                    <li class="xe-ui-menu-submenu-item"><a href="">Support forum</a></li>
+                    <li class="xe-ui-menu-submenu-item"><a href="">Download extensions</a></li>
+                </ul>
+            </li>
+            <!-- Text menu item -->
+            <li>Item with text</li>
+            <!-- Text menu item with an icon -->
+            <li class="xe-ui-menu-item icon but">
+                <a href="" class="xe-ui-menu-item-but">
+                    <img width="12" height="13" src="{getUrl('')}common/img/menu_icon_dashboard.png" />Dashboard
+                </a>
+            </li>
+        </ul>
+        <!-- Menu aligned to the right -->
+        <ul class="f-right">
+            <!-- Image menu item --> 
+            <li class="xe-ui-menu-item image first but">
+                <a href="/mylink" class="xe-ui-menu-item-but"><img src="icon.png" /></a>
+                <ul class="xe-ui-menu-submenu">
+                    <li class="xe-ui-menu-submenu-item"><a href="">About XpressEngine</a></li>
+                    <li class="xe-ui-menu-submenu-item"><a href="">Documentation</a></li>
+                    <li class="xe-ui-menu-submenu-item"><a href="">Support forum</a></li>
+                    <li class="xe-ui-menu-submenu-item"><a href="">Download extensions</a></li>
+                </ul>
+            </li>
+            <!-- Text menu item -->
+            <li>Item with text</li>
+            <!-- Text menu item with an icon -->
+            <li class="xe-ui-menu-item icon but">
+                <a href="" class="xe-ui-menu-item-but">
+                    <img width="12" height="13" src="{getUrl('')}common/img/menu_icon_dashboard.png" />Dashboard
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+}}}
