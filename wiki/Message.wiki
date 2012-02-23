@@ -16,6 +16,6 @@ An error message:
 {{{
 <div class="xe-ui-message error cleared">
 	<a href="#" style="float: right;" onclick="jQuery(this).parent().remove();return false;" class="xe-ui-button-gray">Dismiss</a>
-	<p>Cras elementum, tortor a egestas volutpat, nisi felis malesuada sapien, et congue leo justo a nulla. Nullam turpis justo, fringilla commodo sagittis nec, luctus imperdiet nibh. Ut eleifend tincidunt nunc et pretium. In ac purus a metus mattis iaculis. Duis sodales tortor nec nisl sodales hendrerit. Suspendisse pellentesque, libero at sodales condimentum, turpis dolor laoreet lorem, a vestibulum felis diam sed sapien. Integer a consequat turpis.</p>
+	<p>Cras elementum, tortor a egestas volutpat, nisi felis malesuada sapien, et congue leo justo a nulla.</p>
 </div>
 }}}
