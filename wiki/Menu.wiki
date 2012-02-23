@@ -13,7 +13,7 @@ Menu items must have the CSS class: {{{xe-ui-menu-item}}} and must contain an an
  * Image:  {{{}}}
  * Text with Icon: {{{}}}
 
-Submenus can be added as an additional *<ul>* nested in a menu item with the {{{xe-ui-menu-submenu}}} class applied to them. Submenu items must al have a CSS class: {{{xe-ui-menu-submenu-item}}}.
+Submenus can be added as an additional *'<ul>'* nested in a menu item with the {{{xe-ui-menu-submenu}}} class applied to them. Submenu items must al have a CSS class: {{{xe-ui-menu-submenu-item}}}.
 
 ==Examples==
 Normal textarea:
