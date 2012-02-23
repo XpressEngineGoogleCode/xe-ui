@@ -25,7 +25,6 @@ Menu items must have the CSS class: {{{xe-ui-menu-item}}} and must contain an an
 Submenus can be added as an additional {{{<ul>}}} nested in a menu item with the {{{xe-ui-menu-submenu}}} class applied to them. Submenu items must al have a CSS class: {{{xe-ui-menu-submenu-item}}}.
 
 ==Examples==
-Normal textarea:
 {{{
 <div class="xe-ui-menu cleared">
     <div class="xe-ui-menu-texture cleared">
