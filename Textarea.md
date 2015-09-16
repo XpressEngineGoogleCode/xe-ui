@@ -1,0 +1,19 @@
+# UI Textarea Element #
+
+## Details ##
+Textareas are styled by assigning to them a specific CSS class: `xe-ui-panel-textarea`
+
+All textareas come with 3 styled states: **normal**, **active/focus** and **disabled**.
+
+Disabled textareas automatically have all their interactions disabled.
+
+## Examples ##
+Normal textarea:
+```
+<textarea rows="10" cols="40" class="xe-ui-panel-textarea">Lorem ipsum dolor sit amet.</textarea>
+```
+
+Disabled textarea:
+```
+<textarea rows="10" cols="40" class="xe-ui-panel-textarea disabled">Lorem ipsum dolor sit amet.</textarea>
+```

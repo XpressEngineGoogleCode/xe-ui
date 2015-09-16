@@ -1,0 +1,9 @@
+# Coding Rules #
+
+Below is a list of coding rules if you choose to contribute to the UI kit.
+
+## CSS Classes ##
+
+### Naming ###
+UI elements naming is in the following form:
+`xe-ui-'[element name']`

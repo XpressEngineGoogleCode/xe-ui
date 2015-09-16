@@ -1,0 +1,47 @@
+# UI Table Element #
+
+## Details ##
+
+Tables are styled by assigning to them a specific CSS class: xe-ui-table.
+
+Make sure you set `cellpadding="0"` and `cellspacing="0"` for cross-browser compatibility.
+
+## Examples ##<table class="xe-ui-table" cellpadding="0" cellspacing="0">
+     <caption>
+          <p class="f-left">Some text on the left</p>
+          <p class="f-right">Some text on the right</p>
+     </caption>
+     <thead>
+      <tr>
+	<th scope="col">{$lang->title}</th>
+	<th scope="col">{$lang->writer}</th>
+	<th scope="col">{$lang->cmd_declare}</th>
+	<th scope="col">{$lang->readed_count}</th>
+	<th scope="col">{$lang->cmd_vote}(+/-)</th>
+	<th scope="col">{$lang->date}</th>
+	<th scope="col"><input type="checkbox" /></th>
+      </tr>
+     </thead>
+     <tfoot>
+      <tr>
+	<th scope="col">{$lang->title}</th>
+	<th scope="col">{$lang->writer}</th>
+	<th scope="col">{$lang->cmd_declare}</th>
+	<th scope="col">{$lang->readed_count}</th>
+	<th scope="col">{$lang->cmd_vote}(+/-)</th>
+	<th scope="col">{$lang->date}</th>
+	<th scope="col"><input type="checkbox" /></th>
+      </tr>
+     </tfoot>
+     <tbody>
+      <tr>
+	<td><a href="/mylink">Some text</a></td>
+	<td><a href="/mylink">Some text</a></td>
+	<td><a href="/mylink">Some text</a></td>
+	<td><a href="/mylink">Some text</a></td>
+	<td><a href="/mylink">Some text</a></td>
+	<td><a href="/mylink">Some text</a></td>
+	<td><input type="checkbox" /></td>
+      </tr>
+     </tbody>
+</table>```

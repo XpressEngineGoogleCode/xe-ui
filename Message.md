@@ -1,0 +1,19 @@
+# UI Message Element #
+
+## Details ##
+
+The message element is meant to display various type of messages to the user. It supports color coded messaging for errors, warning or just to inform the user about a certain thing.
+
+A message element is a `<div></div>` with the `xe-ui-message` class applied to it. It also need one of the following classes to skin it properly:
+  * `error`
+  * `info`
+  * `warning`
+
+## Examples ##
+An error message:
+```
+<div class="xe-ui-message error cleared">
+	<a href="#" style="float: right;" onclick="jQuery(this).parent().remove();return false;" class="xe-ui-button-gray">Dismiss</a>
+	<p>Cras elementum, tortor a egestas volutpat, nisi felis malesuada sapien, et congue leo justo a nulla.</p>
+</div>
+```

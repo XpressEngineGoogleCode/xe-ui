@@ -1,0 +1,19 @@
+# UI Textfield Element #
+
+## Details ##
+Inputs of type=`[`text`]` are styled by assigning to them a specific CSS class: `xe-ui-panel-text`.
+
+All inputs come with 3 styled states: **normal**, **active/focus** and **disabled**.
+
+Disabled inputs are no longer functional and clickable.
+
+## Examples ##
+Normal input:
+```
+<input type="text" value="" class="xe-ui-panel-text" />
+```
+
+Disabled input:
+```
+<input type="text" value="" class="xe-ui-panel-text disabled" />
+```
